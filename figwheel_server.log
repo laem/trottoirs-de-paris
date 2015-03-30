@@ -1,0 +1,732 @@
+Figwheel: focusing on build-ids (app)
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.125 seconds.[0m
+notifying browser that file changed:  resources/public/js/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trotte/dev.js
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.136 seconds.[0m
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trotte/dev.js
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.131 seconds.[0m
+notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trotte/dev.js
+Figwheel: focusing on build-ids (app)
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.189 seconds.[0m
+notifying browser that file changed:  resources/public/js/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  /trotte/dev.js
+notifying browser that file changed:  /trotte/core.js
+Figwheel: focusing on build-ids (app)
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.218 seconds.[0m
+notifying browser that file changed:  resources/public/js/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  /trotte/dev.js
+notifying browser that file changed:  /trotte/core.js
+Figwheel: focusing on build-ids (app)
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.137 seconds.[0m
+notifying browser that file changed:  resources/public/js/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  /trotte/dev.js
+notifying browser that file changed:  /trotte/core.js
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.353 seconds.[0m
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  /trotte/core.js
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.129 seconds.[0m
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  /trotte/core.js
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.132 seconds.[0m
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  /trotte/core.js
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.131 seconds.[0m
+notifying browser that file changed:  /trotte/core.js
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.137 seconds.[0m
+notifying browser that file changed:  /trotte/core.js
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+WARNING: Use of undeclared Var trotte.core/home at line 23 src/cljs/trotte/core.cljs
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.209 seconds.[0m
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  /trotte/core.js
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+WARNING: Use of undeclared Var trotte.core/home at line 23 src/cljs/trotte/core.cljs
+[31mCompiling "resources/public/js/app.js" failed.[0m
+[31mclojure.lang.ExceptionInfo: [39m[31mfailed compiling file:src/cljs/trotte/core.cljs[39m
+[35m               core.clj:4403 clojure.core/ex-info[39m
+[32m           compiler.clj:1122 cljs.compiler/compile-file[fn][39m
+[32m           compiler.clj:1090 cljs.compiler/compile-file[39m
+[32m           compiler.clj:1152 cljs.compiler/compile-root[39m
+[32m             closure.clj:367 cljs.closure/compile-dir[39m
+[32m             closure.clj:407 cljs.closure/eval12185[fn][39m
+[32m             closure.clj:315 cljs.closure/eval12121[fn][39m
+[32m             closure.clj:421 cljs.closure/eval12172[fn][39m
+[32m             closure.clj:315 cljs.closure/eval12121[fn][39m
+[32m                 core.clj:18 clojurescript-build.core.CompilableSourcePaths/fn[39m
+[35m               core.clj:2557 clojure.core/map[fn][39m
+[36m             LazySeq.java:40 clojure.lang.LazySeq.sval[39m
+[36m             LazySeq.java:49 clojure.lang.LazySeq.seq[39m
+[36m                 RT.java:484 clojure.lang.RT.seq[39m
+[35m                core.clj:133 clojure.core/seq[39m
+[35m                core.clj:624 clojure.core/apply[39m
+[35m               core.clj:2586 clojure.core/mapcat[39m
+[36m             RestFn.java:423 clojure.lang.RestFn.invoke[39m
+[32m                 core.clj:18 clojurescript-build.core/clojurescript-build.core.CompilableSourcePaths[39m
+[32m            closure.clj:1413 cljs.closure/build[39m
+[32m                core.clj:150 clojurescript-build.core/build-source-paths*[39m
+[32m         auto_builder.clj:59 figwheel-sidecar.auto-builder/warning[fn][39m
+[32m                 auto.clj:55 clojurescript-build.auto/time-build[fn][39m
+[32m                 auto.clj:64 clojurescript-build.auto/after[fn][39m
+[32m                 auto.clj:64 clojurescript-build.auto/after[fn][39m
+[32m                 auto.clj:64 clojurescript-build.auto/after[fn][39m
+[32m                 auto.clj:71 clojurescript-build.auto/error[fn][39m
+[32m                 auto.clj:60 clojurescript-build.auto/before[fn][39m
+[32m                auto.clj:103 clojurescript-build.auto/make-conditional-builder[fn][39m
+[35m               core.clj:6353 clojure.core/mapv[fn][39m
+[36m          ArrayChunk.java:58 clojure.lang.ArrayChunk.reduce[39m
+[35m            protocols.clj:98 clojure.core.protocols/fn[39m
+[35m            protocols.clj:19 clojure.core.protocols/fn[fn][39m
+[35m            protocols.clj:31 clojure.core.protocols/seq-reduce[39m
+[35m            protocols.clj:60 clojure.core.protocols/fn[39m
+[35m            protocols.clj:13 clojure.core.protocols/fn[fn][39m
+[35m               core.clj:6289 clojure.core/reduce[39m
+[35m               core.clj:6353 clojure.core/mapv[39m
+[32m                auto.clj:184 clojurescript-build.auto/autobuild*[fn][39m
+[32m                auto.clj:177 clojurescript-build.auto/autobuild*[fn][39m
+[35m          ioc_macros.clj:940 clojure.core.async.impl.ioc-macros/run-state-machine[39m
+[35m          ioc_macros.clj:944 clojure.core.async.impl.ioc-macros/run-state-machine-wrapped[39m
+[35m               async.clj:362 clojure.core.async/ioc-alts![fn][39m
+[35m               async.clj:231 clojure.core.async/do-alts[fn][39m
+[35m            channels.clj:262 clojure.core.async.impl.channels.ManyToManyChannel/fn[39m
+[36m                 AFn.java:22 clojure.lang.AFn.run[39m
+[34mThreadPoolExecutor.java:1142 java.util.concurrent.ThreadPoolExecutor.runWorker[39m
+[34m ThreadPoolExecutor.java:617 java.util.concurrent.ThreadPoolExecutor$Worker.run[39m
+[34m             Thread.java:745 java.lang.Thread.run[39m
+[31mCaused by: [39m[31mclojure.lang.ExceptionInfo: [39m[31mUnable to resolve var: home-page in this context at line 44 src/cljs/trotte/core.cljs[39m
+[35m               core.clj:4403 clojure.core/ex-info[39m
+[32m            analyzer.clj:379 cljs.analyzer/error[39m
+[32m            analyzer.clj:376 cljs.analyzer/error[39m
+[32m            analyzer.clj:419 cljs.analyzer/confirm-var-exists-throw[fn][39m
+[32m            analyzer.clj:413 cljs.analyzer/confirm-var-exists[39m
+[32m            analyzer.clj:417 cljs.analyzer/confirm-var-exists-throw[fn][39m
+[32m            analyzer.clj:507 cljs.analyzer/resolve-var[39m
+[32m            analyzer.clj:656 cljs.analyzer/eval1249[fn][39m
+[36m            MultiFn.java:249 clojure.lang.MultiFn.invoke[39m
+[32m           analyzer.clj:1833 cljs.analyzer/analyze-seq[39m
+[32m           analyzer.clj:1925 cljs.analyzer/analyze[fn][39m
+[32m           analyzer.clj:1918 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1911 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1910 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1736 cljs.analyzer/parse-invoke[fn][39m
+[35m               core.clj:2559 clojure.core/map[fn][39m
+[36m             LazySeq.java:40 clojure.lang.LazySeq.sval[39m
+[36m             LazySeq.java:49 clojure.lang.LazySeq.seq[39m
+[36m                Cons.java:39 clojure.lang.Cons.next[39m
+[36m    PersistentVector.java:51 clojure.lang.PersistentVector.create[39m
+[36mLazilyPersistentVector.java:31 clojure.lang.LazilyPersistentVector.create[39m
+[35m                core.clj:354 clojure.core/vec[39m
+[32m           analyzer.clj:1736 cljs.analyzer/parse-invoke[39m
+[32m           analyzer.clj:1834 cljs.analyzer/analyze-seq[39m
+[32m           analyzer.clj:1925 cljs.analyzer/analyze[fn][39m
+[32m           analyzer.clj:1918 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1911 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1910 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1057 cljs.analyzer/eval1416[fn][39m
+[36m            MultiFn.java:249 clojure.lang.MultiFn.invoke[39m
+[32m           analyzer.clj:1833 cljs.analyzer/analyze-seq[39m
+[32m           analyzer.clj:1925 cljs.analyzer/analyze[fn][39m
+[32m           analyzer.clj:1918 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1911 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1910 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1115 cljs.analyzer/analyze-let[fn][39m
+[32m           analyzer.clj:1111 cljs.analyzer/analyze-let[39m
+[32m           analyzer.clj:1122 cljs.analyzer/eval1442[fn][39m
+[36m            MultiFn.java:249 clojure.lang.MultiFn.invoke[39m
+[32m           analyzer.clj:1833 cljs.analyzer/analyze-seq[39m
+[32m           analyzer.clj:1925 cljs.analyzer/analyze[fn][39m
+[32m           analyzer.clj:1918 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1835 cljs.analyzer/analyze-seq[39m
+[32m           analyzer.clj:1925 cljs.analyzer/analyze[fn][39m
+[32m           analyzer.clj:1918 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1911 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1910 cljs.analyzer/analyze[39m
+[32m            analyzer.clj:677 cljs.analyzer/eval1259[fn][39m
+[32m            analyzer.clj:677 cljs.analyzer/eval1259[fn][39m
+[36m            MultiFn.java:249 clojure.lang.MultiFn.invoke[39m
+[32m           analyzer.clj:1833 cljs.analyzer/analyze-seq[39m
+[32m           analyzer.clj:1925 cljs.analyzer/analyze[fn][39m
+[32m           analyzer.clj:1918 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1835 cljs.analyzer/analyze-seq[39m
+[32m           analyzer.clj:1925 cljs.analyzer/analyze[fn][39m
+[32m           analyzer.clj:1918 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1911 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1910 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1057 cljs.analyzer/eval1416[fn][39m
+[36m            MultiFn.java:249 clojure.lang.MultiFn.invoke[39m
+[32m           analyzer.clj:1833 cljs.analyzer/analyze-seq[39m
+[32m           analyzer.clj:1925 cljs.analyzer/analyze[fn][39m
+[32m           analyzer.clj:1918 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1911 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1910 cljs.analyzer/analyze[39m
+[32m            analyzer.clj:933 cljs.analyzer/analyze-fn-method[fn][39m
+[32m            analyzer.clj:932 cljs.analyzer/analyze-fn-method[39m
+[32m            analyzer.clj:969 cljs.analyzer/eval1375[fn][39m
+[35m               core.clj:2559 clojure.core/map[fn][39m
+[36m             LazySeq.java:40 clojure.lang.LazySeq.sval[39m
+[36m             LazySeq.java:49 clojure.lang.LazySeq.seq[39m
+[36m                 RT.java:484 clojure.lang.RT.seq[39m
+[35m                core.clj:133 clojure.core/seq[39m
+[35m               core.clj:2551 clojure.core/map[fn][39m
+[36m             LazySeq.java:40 clojure.lang.LazySeq.sval[39m
+[36m             LazySeq.java:49 clojure.lang.LazySeq.seq[39m
+[36m                 RT.java:484 clojure.lang.RT.seq[39m
+[35m                core.clj:133 clojure.core/seq[39m
+[35m                core.clj:624 clojure.core/apply[39m
+[32m            analyzer.clj:970 cljs.analyzer/eval1375[fn][39m
+[36m            MultiFn.java:249 clojure.lang.MultiFn.invoke[39m
+[32m           analyzer.clj:1833 cljs.analyzer/analyze-seq[39m
+[32m           analyzer.clj:1925 cljs.analyzer/analyze[fn][39m
+[32m           analyzer.clj:1918 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1835 cljs.analyzer/analyze-seq[39m
+[32m           analyzer.clj:1925 cljs.analyzer/analyze[fn][39m
+[32m           analyzer.clj:1918 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1911 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1910 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1078 cljs.analyzer/analyze-let[fn][39m
+[32m           analyzer.clj:1077 cljs.analyzer/analyze-let[fn][39m
+[32m           analyzer.clj:1069 cljs.analyzer/analyze-let[39m
+[32m           analyzer.clj:1122 cljs.analyzer/eval1442[fn][39m
+[36m            MultiFn.java:249 clojure.lang.MultiFn.invoke[39m
+[32m           analyzer.clj:1833 cljs.analyzer/analyze-seq[39m
+[32m           analyzer.clj:1925 cljs.analyzer/analyze[fn][39m
+[32m           analyzer.clj:1918 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1835 cljs.analyzer/analyze-seq[39m
+[32m           analyzer.clj:1925 cljs.analyzer/analyze[fn][39m
+[32m           analyzer.clj:1918 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1835 cljs.analyzer/analyze-seq[39m
+[32m           analyzer.clj:1925 cljs.analyzer/analyze[fn][39m
+[32m           analyzer.clj:1918 cljs.analyzer/analyze[39m
+[32m           compiler.clj:1008 cljs.compiler/compile-file*[fn][39m
+[32m            compiler.clj:950 cljs.compiler/with-core-cljs[39m
+[32m            compiler.clj:970 cljs.compiler/compile-file*[39m
+[32m           compiler.clj:1107 cljs.compiler/compile-file[fn][39m
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[31mCompiling "resources/public/js/app.js" failed.[0m
+[31mclojure.lang.ExceptionInfo: [39m[31mfailed compiling file:src/cljs/trotte/core.cljs[39m
+[35m               core.clj:4403 clojure.core/ex-info[39m
+[32m           compiler.clj:1122 cljs.compiler/compile-file[fn][39m
+[32m           compiler.clj:1090 cljs.compiler/compile-file[39m
+[32m           compiler.clj:1152 cljs.compiler/compile-root[39m
+[32m             closure.clj:367 cljs.closure/compile-dir[39m
+[32m             closure.clj:407 cljs.closure/eval12185[fn][39m
+[32m             closure.clj:315 cljs.closure/eval12121[fn][39m
+[32m             closure.clj:421 cljs.closure/eval12172[fn][39m
+[32m             closure.clj:315 cljs.closure/eval12121[fn][39m
+[32m                 core.clj:18 clojurescript-build.core.CompilableSourcePaths/fn[39m
+[35m               core.clj:2557 clojure.core/map[fn][39m
+[36m             LazySeq.java:40 clojure.lang.LazySeq.sval[39m
+[36m             LazySeq.java:49 clojure.lang.LazySeq.seq[39m
+[36m                 RT.java:484 clojure.lang.RT.seq[39m
+[35m                core.clj:133 clojure.core/seq[39m
+[35m                core.clj:624 clojure.core/apply[39m
+[35m               core.clj:2586 clojure.core/mapcat[39m
+[36m             RestFn.java:423 clojure.lang.RestFn.invoke[39m
+[32m                 core.clj:18 clojurescript-build.core/clojurescript-build.core.CompilableSourcePaths[39m
+[32m            closure.clj:1413 cljs.closure/build[39m
+[32m                core.clj:150 clojurescript-build.core/build-source-paths*[39m
+[32m         auto_builder.clj:59 figwheel-sidecar.auto-builder/warning[fn][39m
+[32m                 auto.clj:55 clojurescript-build.auto/time-build[fn][39m
+[32m                 auto.clj:64 clojurescript-build.auto/after[fn][39m
+[32m                 auto.clj:64 clojurescript-build.auto/after[fn][39m
+[32m                 auto.clj:64 clojurescript-build.auto/after[fn][39m
+[32m                 auto.clj:71 clojurescript-build.auto/error[fn][39m
+[32m                 auto.clj:60 clojurescript-build.auto/before[fn][39m
+[32m                auto.clj:103 clojurescript-build.auto/make-conditional-builder[fn][39m
+[35m               core.clj:6353 clojure.core/mapv[fn][39m
+[36m          ArrayChunk.java:58 clojure.lang.ArrayChunk.reduce[39m
+[35m            protocols.clj:98 clojure.core.protocols/fn[39m
+[35m            protocols.clj:19 clojure.core.protocols/fn[fn][39m
+[35m            protocols.clj:31 clojure.core.protocols/seq-reduce[39m
+[35m            protocols.clj:60 clojure.core.protocols/fn[39m
+[35m            protocols.clj:13 clojure.core.protocols/fn[fn][39m
+[35m               core.clj:6289 clojure.core/reduce[39m
+[35m               core.clj:6353 clojure.core/mapv[39m
+[32m                auto.clj:184 clojurescript-build.auto/autobuild*[fn][39m
+[32m                auto.clj:177 clojurescript-build.auto/autobuild*[fn][39m
+[35m          ioc_macros.clj:940 clojure.core.async.impl.ioc-macros/run-state-machine[39m
+[35m          ioc_macros.clj:944 clojure.core.async.impl.ioc-macros/run-state-machine-wrapped[39m
+[35m               async.clj:362 clojure.core.async/ioc-alts![fn][39m
+[35m               async.clj:231 clojure.core.async/do-alts[fn][39m
+[35m            channels.clj:262 clojure.core.async.impl.channels.ManyToManyChannel/fn[39m
+[36m                 AFn.java:22 clojure.lang.AFn.run[39m
+[34mThreadPoolExecutor.java:1142 java.util.concurrent.ThreadPoolExecutor.runWorker[39m
+[34m ThreadPoolExecutor.java:617 java.util.concurrent.ThreadPoolExecutor$Worker.run[39m
+[34m             Thread.java:745 java.lang.Thread.run[39m
+[31mCaused by: [39m[31mclojure.lang.ExceptionInfo: [39m[31mUnable to resolve var: home-page in this context at line 45 src/cljs/trotte/core.cljs[39m
+[35m               core.clj:4403 clojure.core/ex-info[39m
+[32m            analyzer.clj:379 cljs.analyzer/error[39m
+[32m            analyzer.clj:376 cljs.analyzer/error[39m
+[32m            analyzer.clj:419 cljs.analyzer/confirm-var-exists-throw[fn][39m
+[32m            analyzer.clj:413 cljs.analyzer/confirm-var-exists[39m
+[32m            analyzer.clj:417 cljs.analyzer/confirm-var-exists-throw[fn][39m
+[32m            analyzer.clj:507 cljs.analyzer/resolve-var[39m
+[32m            analyzer.clj:656 cljs.analyzer/eval1249[fn][39m
+[36m            MultiFn.java:249 clojure.lang.MultiFn.invoke[39m
+[32m           analyzer.clj:1833 cljs.analyzer/analyze-seq[39m
+[32m           analyzer.clj:1925 cljs.analyzer/analyze[fn][39m
+[32m           analyzer.clj:1918 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1911 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1910 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1736 cljs.analyzer/parse-invoke[fn][39m
+[35m               core.clj:2559 clojure.core/map[fn][39m
+[36m             LazySeq.java:40 clojure.lang.LazySeq.sval[39m
+[36m             LazySeq.java:49 clojure.lang.LazySeq.seq[39m
+[36m                Cons.java:39 clojure.lang.Cons.next[39m
+[36m    PersistentVector.java:51 clojure.lang.PersistentVector.create[39m
+[36mLazilyPersistentVector.java:31 clojure.lang.LazilyPersistentVector.create[39m
+[35m                core.clj:354 clojure.core/vec[39m
+[32m           analyzer.clj:1736 cljs.analyzer/parse-invoke[39m
+[32m           analyzer.clj:1834 cljs.analyzer/analyze-seq[39m
+[32m           analyzer.clj:1925 cljs.analyzer/analyze[fn][39m
+[32m           analyzer.clj:1918 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1911 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1910 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1057 cljs.analyzer/eval1416[fn][39m
+[36m            MultiFn.java:249 clojure.lang.MultiFn.invoke[39m
+[32m           analyzer.clj:1833 cljs.analyzer/analyze-seq[39m
+[32m           analyzer.clj:1925 cljs.analyzer/analyze[fn][39m
+[32m           analyzer.clj:1918 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1911 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1910 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1115 cljs.analyzer/analyze-let[fn][39m
+[32m           analyzer.clj:1111 cljs.analyzer/analyze-let[39m
+[32m           analyzer.clj:1122 cljs.analyzer/eval1442[fn][39m
+[36m            MultiFn.java:249 clojure.lang.MultiFn.invoke[39m
+[32m           analyzer.clj:1833 cljs.analyzer/analyze-seq[39m
+[32m           analyzer.clj:1925 cljs.analyzer/analyze[fn][39m
+[32m           analyzer.clj:1918 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1835 cljs.analyzer/analyze-seq[39m
+[32m           analyzer.clj:1925 cljs.analyzer/analyze[fn][39m
+[32m           analyzer.clj:1918 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1911 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1910 cljs.analyzer/analyze[39m
+[32m            analyzer.clj:677 cljs.analyzer/eval1259[fn][39m
+[32m            analyzer.clj:677 cljs.analyzer/eval1259[fn][39m
+[36m            MultiFn.java:249 clojure.lang.MultiFn.invoke[39m
+[32m           analyzer.clj:1833 cljs.analyzer/analyze-seq[39m
+[32m           analyzer.clj:1925 cljs.analyzer/analyze[fn][39m
+[32m           analyzer.clj:1918 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1835 cljs.analyzer/analyze-seq[39m
+[32m           analyzer.clj:1925 cljs.analyzer/analyze[fn][39m
+[32m           analyzer.clj:1918 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1911 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1910 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1057 cljs.analyzer/eval1416[fn][39m
+[36m            MultiFn.java:249 clojure.lang.MultiFn.invoke[39m
+[32m           analyzer.clj:1833 cljs.analyzer/analyze-seq[39m
+[32m           analyzer.clj:1925 cljs.analyzer/analyze[fn][39m
+[32m           analyzer.clj:1918 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1911 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1910 cljs.analyzer/analyze[39m
+[32m            analyzer.clj:933 cljs.analyzer/analyze-fn-method[fn][39m
+[32m            analyzer.clj:932 cljs.analyzer/analyze-fn-method[39m
+[32m            analyzer.clj:969 cljs.analyzer/eval1375[fn][39m
+[35m               core.clj:2559 clojure.core/map[fn][39m
+[36m             LazySeq.java:40 clojure.lang.LazySeq.sval[39m
+[36m             LazySeq.java:49 clojure.lang.LazySeq.seq[39m
+[36m                 RT.java:484 clojure.lang.RT.seq[39m
+[35m                core.clj:133 clojure.core/seq[39m
+[35m               core.clj:2551 clojure.core/map[fn][39m
+[36m             LazySeq.java:40 clojure.lang.LazySeq.sval[39m
+[36m             LazySeq.java:49 clojure.lang.LazySeq.seq[39m
+[36m                 RT.java:484 clojure.lang.RT.seq[39m
+[35m                core.clj:133 clojure.core/seq[39m
+[35m                core.clj:624 clojure.core/apply[39m
+[32m            analyzer.clj:970 cljs.analyzer/eval1375[fn][39m
+[36m            MultiFn.java:249 clojure.lang.MultiFn.invoke[39m
+[32m           analyzer.clj:1833 cljs.analyzer/analyze-seq[39m
+[32m           analyzer.clj:1925 cljs.analyzer/analyze[fn][39m
+[32m           analyzer.clj:1918 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1835 cljs.analyzer/analyze-seq[39m
+[32m           analyzer.clj:1925 cljs.analyzer/analyze[fn][39m
+[32m           analyzer.clj:1918 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1911 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1910 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1078 cljs.analyzer/analyze-let[fn][39m
+[32m           analyzer.clj:1077 cljs.analyzer/analyze-let[fn][39m
+[32m           analyzer.clj:1069 cljs.analyzer/analyze-let[39m
+[32m           analyzer.clj:1122 cljs.analyzer/eval1442[fn][39m
+[36m            MultiFn.java:249 clojure.lang.MultiFn.invoke[39m
+[32m           analyzer.clj:1833 cljs.analyzer/analyze-seq[39m
+[32m           analyzer.clj:1925 cljs.analyzer/analyze[fn][39m
+[32m           analyzer.clj:1918 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1835 cljs.analyzer/analyze-seq[39m
+[32m           analyzer.clj:1925 cljs.analyzer/analyze[fn][39m
+[32m           analyzer.clj:1918 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1835 cljs.analyzer/analyze-seq[39m
+[32m           analyzer.clj:1925 cljs.analyzer/analyze[fn][39m
+[32m           analyzer.clj:1918 cljs.analyzer/analyze[39m
+[32m           compiler.clj:1008 cljs.compiler/compile-file*[fn][39m
+[32m            compiler.clj:950 cljs.compiler/with-core-cljs[39m
+[32m            compiler.clj:970 cljs.compiler/compile-file*[39m
+[32m           compiler.clj:1107 cljs.compiler/compile-file[fn][39m
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.118 seconds.[0m
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  /trotte/core.js
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[31mCompiling "resources/public/js/app.js" failed.[0m
+[31mclojure.lang.ExceptionInfo: [39m[31mfailed compiling file:src/cljs/trotte/core.cljs[39m
+[35m               core.clj:4403 clojure.core/ex-info[39m
+[32m           compiler.clj:1122 cljs.compiler/compile-file[fn][39m
+[32m           compiler.clj:1090 cljs.compiler/compile-file[39m
+[32m           compiler.clj:1152 cljs.compiler/compile-root[39m
+[32m             closure.clj:367 cljs.closure/compile-dir[39m
+[32m             closure.clj:407 cljs.closure/eval12185[fn][39m
+[32m             closure.clj:315 cljs.closure/eval12121[fn][39m
+[32m             closure.clj:421 cljs.closure/eval12172[fn][39m
+[32m             closure.clj:315 cljs.closure/eval12121[fn][39m
+[32m                 core.clj:18 clojurescript-build.core.CompilableSourcePaths/fn[39m
+[35m               core.clj:2557 clojure.core/map[fn][39m
+[36m             LazySeq.java:40 clojure.lang.LazySeq.sval[39m
+[36m             LazySeq.java:49 clojure.lang.LazySeq.seq[39m
+[36m                 RT.java:484 clojure.lang.RT.seq[39m
+[35m                core.clj:133 clojure.core/seq[39m
+[35m                core.clj:624 clojure.core/apply[39m
+[35m               core.clj:2586 clojure.core/mapcat[39m
+[36m             RestFn.java:423 clojure.lang.RestFn.invoke[39m
+[32m                 core.clj:18 clojurescript-build.core/clojurescript-build.core.CompilableSourcePaths[39m
+[32m            closure.clj:1413 cljs.closure/build[39m
+[32m                core.clj:150 clojurescript-build.core/build-source-paths*[39m
+[32m         auto_builder.clj:59 figwheel-sidecar.auto-builder/warning[fn][39m
+[32m                 auto.clj:55 clojurescript-build.auto/time-build[fn][39m
+[32m                 auto.clj:64 clojurescript-build.auto/after[fn][39m
+[32m                 auto.clj:64 clojurescript-build.auto/after[fn][39m
+[32m                 auto.clj:64 clojurescript-build.auto/after[fn][39m
+[32m                 auto.clj:71 clojurescript-build.auto/error[fn][39m
+[32m                 auto.clj:60 clojurescript-build.auto/before[fn][39m
+[32m                auto.clj:103 clojurescript-build.auto/make-conditional-builder[fn][39m
+[35m               core.clj:6353 clojure.core/mapv[fn][39m
+[36m          ArrayChunk.java:58 clojure.lang.ArrayChunk.reduce[39m
+[35m            protocols.clj:98 clojure.core.protocols/fn[39m
+[35m            protocols.clj:19 clojure.core.protocols/fn[fn][39m
+[35m            protocols.clj:31 clojure.core.protocols/seq-reduce[39m
+[35m            protocols.clj:60 clojure.core.protocols/fn[39m
+[35m            protocols.clj:13 clojure.core.protocols/fn[fn][39m
+[35m               core.clj:6289 clojure.core/reduce[39m
+[35m               core.clj:6353 clojure.core/mapv[39m
+[32m                auto.clj:184 clojurescript-build.auto/autobuild*[fn][39m
+[32m                auto.clj:177 clojurescript-build.auto/autobuild*[fn][39m
+[35m          ioc_macros.clj:940 clojure.core.async.impl.ioc-macros/run-state-machine[39m
+[35m          ioc_macros.clj:944 clojure.core.async.impl.ioc-macros/run-state-machine-wrapped[39m
+[35m               async.clj:362 clojure.core.async/ioc-alts![fn][39m
+[35m               async.clj:231 clojure.core.async/do-alts[fn][39m
+[35m            channels.clj:262 clojure.core.async.impl.channels.ManyToManyChannel/fn[39m
+[36m                 AFn.java:22 clojure.lang.AFn.run[39m
+[34mThreadPoolExecutor.java:1142 java.util.concurrent.ThreadPoolExecutor.runWorker[39m
+[34m ThreadPoolExecutor.java:617 java.util.concurrent.ThreadPoolExecutor$Worker.run[39m
+[34m             Thread.java:745 java.lang.Thread.run[39m
+[31mCaused by: [39m[31mclojure.lang.ExceptionInfo: [39m[31mUnable to resolve var: home-page in this context at line 45 src/cljs/trotte/core.cljs[39m
+[35m               core.clj:4403 clojure.core/ex-info[39m
+[32m            analyzer.clj:379 cljs.analyzer/error[39m
+[32m            analyzer.clj:376 cljs.analyzer/error[39m
+[32m            analyzer.clj:419 cljs.analyzer/confirm-var-exists-throw[fn][39m
+[32m            analyzer.clj:413 cljs.analyzer/confirm-var-exists[39m
+[32m            analyzer.clj:417 cljs.analyzer/confirm-var-exists-throw[fn][39m
+[32m            analyzer.clj:507 cljs.analyzer/resolve-var[39m
+[32m            analyzer.clj:656 cljs.analyzer/eval1249[fn][39m
+[36m            MultiFn.java:249 clojure.lang.MultiFn.invoke[39m
+[32m           analyzer.clj:1833 cljs.analyzer/analyze-seq[39m
+[32m           analyzer.clj:1925 cljs.analyzer/analyze[fn][39m
+[32m           analyzer.clj:1918 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1911 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1910 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1736 cljs.analyzer/parse-invoke[fn][39m
+[35m               core.clj:2559 clojure.core/map[fn][39m
+[36m             LazySeq.java:40 clojure.lang.LazySeq.sval[39m
+[36m             LazySeq.java:49 clojure.lang.LazySeq.seq[39m
+[36m                Cons.java:39 clojure.lang.Cons.next[39m
+[36m    PersistentVector.java:51 clojure.lang.PersistentVector.create[39m
+[36mLazilyPersistentVector.java:31 clojure.lang.LazilyPersistentVector.create[39m
+[35m                core.clj:354 clojure.core/vec[39m
+[32m           analyzer.clj:1736 cljs.analyzer/parse-invoke[39m
+[32m           analyzer.clj:1834 cljs.analyzer/analyze-seq[39m
+[32m           analyzer.clj:1925 cljs.analyzer/analyze[fn][39m
+[32m           analyzer.clj:1918 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1911 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1910 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1057 cljs.analyzer/eval1416[fn][39m
+[36m            MultiFn.java:249 clojure.lang.MultiFn.invoke[39m
+[32m           analyzer.clj:1833 cljs.analyzer/analyze-seq[39m
+[32m           analyzer.clj:1925 cljs.analyzer/analyze[fn][39m
+[32m           analyzer.clj:1918 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1911 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1910 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1115 cljs.analyzer/analyze-let[fn][39m
+[32m           analyzer.clj:1111 cljs.analyzer/analyze-let[39m
+[32m           analyzer.clj:1122 cljs.analyzer/eval1442[fn][39m
+[36m            MultiFn.java:249 clojure.lang.MultiFn.invoke[39m
+[32m           analyzer.clj:1833 cljs.analyzer/analyze-seq[39m
+[32m           analyzer.clj:1925 cljs.analyzer/analyze[fn][39m
+[32m           analyzer.clj:1918 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1835 cljs.analyzer/analyze-seq[39m
+[32m           analyzer.clj:1925 cljs.analyzer/analyze[fn][39m
+[32m           analyzer.clj:1918 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1911 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1910 cljs.analyzer/analyze[39m
+[32m            analyzer.clj:677 cljs.analyzer/eval1259[fn][39m
+[32m            analyzer.clj:677 cljs.analyzer/eval1259[fn][39m
+[36m            MultiFn.java:249 clojure.lang.MultiFn.invoke[39m
+[32m           analyzer.clj:1833 cljs.analyzer/analyze-seq[39m
+[32m           analyzer.clj:1925 cljs.analyzer/analyze[fn][39m
+[32m           analyzer.clj:1918 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1835 cljs.analyzer/analyze-seq[39m
+[32m           analyzer.clj:1925 cljs.analyzer/analyze[fn][39m
+[32m           analyzer.clj:1918 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1911 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1910 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1057 cljs.analyzer/eval1416[fn][39m
+[36m            MultiFn.java:249 clojure.lang.MultiFn.invoke[39m
+[32m           analyzer.clj:1833 cljs.analyzer/analyze-seq[39m
+[32m           analyzer.clj:1925 cljs.analyzer/analyze[fn][39m
+[32m           analyzer.clj:1918 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1911 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1910 cljs.analyzer/analyze[39m
+[32m            analyzer.clj:933 cljs.analyzer/analyze-fn-method[fn][39m
+[32m            analyzer.clj:932 cljs.analyzer/analyze-fn-method[39m
+[32m            analyzer.clj:969 cljs.analyzer/eval1375[fn][39m
+[35m               core.clj:2559 clojure.core/map[fn][39m
+[36m             LazySeq.java:40 clojure.lang.LazySeq.sval[39m
+[36m             LazySeq.java:49 clojure.lang.LazySeq.seq[39m
+[36m                 RT.java:484 clojure.lang.RT.seq[39m
+[35m                core.clj:133 clojure.core/seq[39m
+[35m               core.clj:2551 clojure.core/map[fn][39m
+[36m             LazySeq.java:40 clojure.lang.LazySeq.sval[39m
+[36m             LazySeq.java:49 clojure.lang.LazySeq.seq[39m
+[36m                 RT.java:484 clojure.lang.RT.seq[39m
+[35m                core.clj:133 clojure.core/seq[39m
+[35m                core.clj:624 clojure.core/apply[39m
+[32m            analyzer.clj:970 cljs.analyzer/eval1375[fn][39m
+[36m            MultiFn.java:249 clojure.lang.MultiFn.invoke[39m
+[32m           analyzer.clj:1833 cljs.analyzer/analyze-seq[39m
+[32m           analyzer.clj:1925 cljs.analyzer/analyze[fn][39m
+[32m           analyzer.clj:1918 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1835 cljs.analyzer/analyze-seq[39m
+[32m           analyzer.clj:1925 cljs.analyzer/analyze[fn][39m
+[32m           analyzer.clj:1918 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1911 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1910 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1078 cljs.analyzer/analyze-let[fn][39m
+[32m           analyzer.clj:1077 cljs.analyzer/analyze-let[fn][39m
+[32m           analyzer.clj:1069 cljs.analyzer/analyze-let[39m
+[32m           analyzer.clj:1122 cljs.analyzer/eval1442[fn][39m
+[36m            MultiFn.java:249 clojure.lang.MultiFn.invoke[39m
+[32m           analyzer.clj:1833 cljs.analyzer/analyze-seq[39m
+[32m           analyzer.clj:1925 cljs.analyzer/analyze[fn][39m
+[32m           analyzer.clj:1918 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1835 cljs.analyzer/analyze-seq[39m
+[32m           analyzer.clj:1925 cljs.analyzer/analyze[fn][39m
+[32m           analyzer.clj:1918 cljs.analyzer/analyze[39m
+[32m           analyzer.clj:1835 cljs.analyzer/analyze-seq[39m
+[32m           analyzer.clj:1925 cljs.analyzer/analyze[fn][39m
+[32m           analyzer.clj:1918 cljs.analyzer/analyze[39m
+[32m           compiler.clj:1008 cljs.compiler/compile-file*[fn][39m
+[32m            compiler.clj:950 cljs.compiler/with-core-cljs[39m
+[32m            compiler.clj:970 cljs.compiler/compile-file*[39m
+[32m           compiler.clj:1107 cljs.compiler/compile-file[fn][39m
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.121 seconds.[0m
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  /trotte/core.js
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.13 seconds.[0m
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  /trotte/core.js
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.126 seconds.[0m
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  /trotte/core.js
+sending changed CSS file: resources/public/css/leaflet.css
+Figwheel: focusing on build-ids (app)
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.183 seconds.[0m
+notifying browser that file changed:  resources/public/js/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  /trotte/dev.js
+notifying browser that file changed:  /trotte/core.js
+sending changed CSS file: resources/public/css/site.css
+sending changed CSS file: resources/public/css/site.css
+sending changed CSS file: resources/public/css/site.css
+sending changed CSS file: resources/public/css/site.css
+sending changed CSS file: resources/public/css/site.css
+sending changed CSS file: resources/public/css/site.css
+sending changed CSS file: resources/public/css/site.css
+sending changed CSS file: resources/public/css/site.css
+sending changed CSS file: resources/public/css/site.css
+sending changed CSS file: resources/public/css/site.css
+sending changed CSS file: resources/public/css/site.css
+sending changed CSS file: resources/public/css/site.css
+sending changed CSS file: resources/public/css/site.css
+sending changed CSS file: resources/public/css/site.css
+sending changed CSS file: resources/public/css/site.css
+sending changed CSS file: resources/public/css/site.css
+sending changed CSS file: resources/public/css/site.css
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.325 seconds.[0m
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  /trotte/core.js
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.138 seconds.[0m
+notifying browser that file changed:  /trotte/core.js
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.138 seconds.[0m
+notifying browser that file changed:  /trotte/core.js
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.132 seconds.[0m
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  /trotte/core.js
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.134 seconds.[0m
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  /trotte/core.js
+sending changed CSS file: resources/public/css/site.css
+sending changed CSS file: resources/public/css/site.css
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.123 seconds.[0m
+notifying browser that file changed:  /trotte/core.js
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.124 seconds.[0m
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  /trotte/core.js
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.124 seconds.[0m
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  /trotte/core.js
+Figwheel: focusing on build-ids (app)
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.131 seconds.[0m
+notifying browser that file changed:  resources/public/js/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  /trotte/dev.js
+notifying browser that file changed:  /trotte/core.js
+Figwheel: focusing on build-ids (app)
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.135 seconds.[0m
+notifying browser that file changed:  resources/public/js/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  /trotte/dev.js
+notifying browser that file changed:  /trotte/core.js
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[31mCompiling "resources/public/js/app.js" failed.[0m
+[31mclojure.lang.ExceptionInfo: [39m[31mfailed compiling file:src/cljs/trotte/core.cljs[39m
+[35m                 core.clj:4403 clojure.core/ex-info[39m
+[32m             compiler.clj:1122 cljs.compiler/compile-file[fn][39m
+[32m             compiler.clj:1090 cljs.compiler/compile-file[39m
+[32m             compiler.clj:1152 cljs.compiler/compile-root[39m
+[32m               closure.clj:367 cljs.closure/compile-dir[39m
+[32m               closure.clj:407 cljs.closure/eval12185[fn][39m
+[32m               closure.clj:315 cljs.closure/eval12121[fn][39m
+[32m               closure.clj:421 cljs.closure/eval12172[fn][39m
+[32m               closure.clj:315 cljs.closure/eval12121[fn][39m
+[32m                   core.clj:18 clojurescript-build.core.CompilableSourcePaths/fn[39m
+[35m                 core.clj:2557 clojure.core/map[fn][39m
+[36m               LazySeq.java:40 clojure.lang.LazySeq.sval[39m
+[36m               LazySeq.java:49 clojure.lang.LazySeq.seq[39m
+[36m                   RT.java:484 clojure.lang.RT.seq[39m
+[35m                  core.clj:133 clojure.core/seq[39m
+[35m                  core.clj:624 clojure.core/apply[39m
+[35m                 core.clj:2586 clojure.core/mapcat[39m
+[36m               RestFn.java:423 clojure.lang.RestFn.invoke[39m
+[32m                   core.clj:18 clojurescript-build.core/clojurescript-build.core.CompilableSourcePaths[39m
+[32m              closure.clj:1413 cljs.closure/build[39m
+[32m                  core.clj:150 clojurescript-build.core/build-source-paths*[39m
+[32m           auto_builder.clj:59 figwheel-sidecar.auto-builder/warning[fn][39m
+[32m                   auto.clj:55 clojurescript-build.auto/time-build[fn][39m
+[32m                   auto.clj:64 clojurescript-build.auto/after[fn][39m
+[32m                   auto.clj:64 clojurescript-build.auto/after[fn][39m
+[32m                   auto.clj:64 clojurescript-build.auto/after[fn][39m
+[32m                   auto.clj:71 clojurescript-build.auto/error[fn][39m
+[32m                   auto.clj:60 clojurescript-build.auto/before[fn][39m
+[32m                  auto.clj:103 clojurescript-build.auto/make-conditional-builder[fn][39m
+[35m                 core.clj:6353 clojure.core/mapv[fn][39m
+[36m            ArrayChunk.java:58 clojure.lang.ArrayChunk.reduce[39m
+[35m              protocols.clj:98 clojure.core.protocols/fn[39m
+[35m              protocols.clj:19 clojure.core.protocols/fn[fn][39m
+[35m              protocols.clj:31 clojure.core.protocols/seq-reduce[39m
+[35m              protocols.clj:60 clojure.core.protocols/fn[39m
+[35m              protocols.clj:13 clojure.core.protocols/fn[fn][39m
+[35m                 core.clj:6289 clojure.core/reduce[39m
+[35m                 core.clj:6353 clojure.core/mapv[39m
+[32m                  auto.clj:184 clojurescript-build.auto/autobuild*[fn][39m
+[32m                  auto.clj:177 clojurescript-build.auto/autobuild*[fn][39m
+[35m            ioc_macros.clj:940 clojure.core.async.impl.ioc-macros/run-state-machine[39m
+[35m            ioc_macros.clj:944 clojure.core.async.impl.ioc-macros/run-state-machine-wrapped[39m
+[35m                 async.clj:362 clojure.core.async/ioc-alts![fn][39m
+[35m                 async.clj:231 clojure.core.async/do-alts[fn][39m
+[35m              channels.clj:262 clojure.core.async.impl.channels.ManyToManyChannel/fn[39m
+[36m                   AFn.java:22 clojure.lang.AFn.run[39m
+[34m  ThreadPoolExecutor.java:1142 java.util.concurrent.ThreadPoolExecutor.runWorker[39m
+[34m   ThreadPoolExecutor.java:617 java.util.concurrent.ThreadPoolExecutor$Worker.run[39m
+[34m               Thread.java:745 java.lang.Thread.run[39m
+[31mCaused by: [39m[31mclojure.lang.ExceptionInfo: [39m[31mNo such namespace: com.mongodb.ServerAddress, could not locate com/mongodb/ServerAddress.cljs at line 2 src/cljs/trotte/core.cljs[39m
+[35m                 core.clj:4403 clojure.core/ex-info[39m
+[32m              analyzer.clj:379 cljs.analyzer/error[39m
+[32m              analyzer.clj:376 cljs.analyzer/error[39m
+[32m             analyzer.clj:1249 cljs.analyzer/analyze-deps[39m
+[32m             analyzer.clj:1494 cljs.analyzer/eval1614[fn][39m
+[36m              MultiFn.java:249 clojure.lang.MultiFn.invoke[39m
+[32m             analyzer.clj:1833 cljs.analyzer/analyze-seq[39m
+[32m             analyzer.clj:1925 cljs.analyzer/analyze[fn][39m
+[32m             analyzer.clj:1918 cljs.analyzer/analyze[39m
+[32m             compiler.clj:1008 cljs.compiler/compile-file*[fn][39m
+[32m              compiler.clj:950 cljs.compiler/with-core-cljs[39m
+[32m              compiler.clj:970 cljs.compiler/compile-file*[39m
+[32m             compiler.clj:1107 cljs.compiler/compile-file[fn][39m
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.273 seconds.[0m
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  /trotte/core.js
+Figwheel: focusing on build-ids (app)
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.135 seconds.[0m
+notifying browser that file changed:  resources/public/js/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  /trotte/dev.js
+notifying browser that file changed:  /trotte/core.js
+Figwheel: focusing on build-ids (app)
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.134 seconds.[0m
+notifying browser that file changed:  resources/public/js/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  /trotte/dev.js
+notifying browser that file changed:  /trotte/core.js
+Figwheel: focusing on build-ids (app)
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.149 seconds.[0m
+notifying browser that file changed:  resources/public/js/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  /trotte/dev.js
+notifying browser that file changed:  /trotte/core.js
+Figwheel: focusing on build-ids (app)
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.149 seconds.[0m
+notifying browser that file changed:  resources/public/js/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  /trotte/dev.js
+notifying browser that file changed:  /trotte/core.js
+Figwheel: focusing on build-ids (app)
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.206 seconds.[0m
+notifying browser that file changed:  resources/public/js/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  /trotte/dev.js
+notifying browser that file changed:  /trotte/core.js

@@ -21,7 +21,9 @@
                  [environ "1.0.0"]
                  [secretary "1.2.2"]
                  [cljsjs/leaflet "0.7.3-0"]
-                 [com.novemberain/monger "2.1.0"]]
+                 [com.novemberain/monger "2.1.0"]
+                 [cljs-ajax "0.3.10"]
+                 [com.cognitect/transit-cljs "0.8.205"]]
 
   :plugins [[lein-cljsbuild "1.0.4"]
             [lein-environ "1.0.0"]

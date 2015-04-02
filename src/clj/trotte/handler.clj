@@ -9,52 +9,41 @@
             [monger.core :as mg]
             [monger.collection :as mc]
             [monger.operators :refer :all])
-          (:import [com.mongodb MongoOptions ServerAddress]))
+  (:import [com.mongodb MongoOptions ServerAddress]))
 
-(def query { :geometry     { $geoWithin
-                    { "$geometry"
-                      {
-                        :type "Polygon"
-                        :coordinates [
-                          [
-                            [
-                              2.3788082599639893
-                              48.84600796705691
-                            ]
-                            [
-                              2.3788082599639893
-                              48.84652337993973
-                            ]
-                            [
-                              2.3798999190330505
-                              48.84652337993973
-                            ]
-                            [
-                              2.3798999190330505
-                              48.84600796705691
-                            ]
-                            [
-                              2.3788082599639893
-                              48.84600796705691
-                            ]
-                          ]
-                        ]
-      } } } })
+(def withinQuery { :geometry { $geoWithin
+                             { "$geometry"
+                               {
+                                :type "Polygon"
+                                :coordinates [[[2.3788082599639893 48.84600796705691]
+                                               [2.3788082599639893 48.84652337993973]
+                                               [2.3798999190330505 48.84652337993973]
+                                               [2.3798999190330505 48.84600796705691]
+                                               [2.3788082599639893 48.84600796705691]]]
+                                } } } })
+
+(def nearQuery { :geometry { $near
+                             { "$geometry" {
+                                :type "Point"
+                                :coordinates [2.3788082599639893 48.84600796705691]
+                                }
+                               "$maxDistance" 600} } })
+
 
 (defn objectId-reader [key value]
   (if (= key :_id)
     (str value)
     value))
 
-(defn tokoutoussek []
+(defn desTrottoirs []
   (let [conn (mg/connect) db (mg/get-db conn "agreable") coll "trottoirs"]
     (str (mc/count db coll))
-    (json/write-str (mc/find-maps db coll query) :value-fn objectId-reader)
+    (json/write-str (mc/find-maps db coll nearQuery) :value-fn objectId-reader)
     ))
 
 (defroutes routes
   (GET "/" [] (render-file "templates/index.html" {:dev (env :dev?)}))
-  (GET "/mongo" [] (tokoutoussek))
+  (GET "/sample" [] (desTrottoirs))
   (resources "/")
   (not-found "Not Found"))
 

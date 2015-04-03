@@ -19,11 +19,14 @@
   (let [map (.setView (.map js/L "map") #js [48.846195 2.379443] 18)
         token "sk.eyJ1IjoibGFlbSIsImEiOiIxOURTMEtvIn0._LB5HO5XkDMWbWU4eu8RZg"
         r (t/reader :json)
-        getHandler (fn [response] (.addTo (.geoJson js/L (clj->js (t/read r response))) map))]
+        getHandler (fn [response] (.addTo (.geoJson js/L
+                                                    (clj->js (t/read r response))
+                                                    (clj->js {:style {:color "brown" :weight 2}}))
+                                          map))]
     (do
       (.addTo (.tileLayer js/L (str "http://{s}.tiles.mapbox.com/v4/laem.lihjhd1m/{z}/{x}/{y}.png?access_token=" token)
                         (clj->js {:attribution "Map data &copy; [...]"
-                                  :maxZoom 18}))
+                                  :maxZoom 19}))
             map)
       (GET "/sample" {:handler getHandler}))))
 

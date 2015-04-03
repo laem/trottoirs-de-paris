@@ -27,7 +27,8 @@
                                 :type "Point"
                                 :coordinates [2.3788082599639893 48.84600796705691]
                                 }
-                               "$maxDistance" 600} } })
+                               "$maxDistance" 400} } })
+
 
 
 (defn objectId-reader [key value]
@@ -36,9 +37,10 @@
     value))
 
 (defn desTrottoirs []
-  (let [conn (mg/connect) db (mg/get-db conn "agreable") coll "trottoirs"]
+  (let [conn (mg/connect) db (mg/get-db conn "agreable") coll "t"]
     (str (mc/count db coll))
-    (json/write-str (mc/find-maps db coll nearQuery) :value-fn objectId-reader)
+    (let [res (mc/find-maps db coll nearQuery)]
+    (json/write-str res :value-fn objectId-reader))
     ))
 
 (defroutes routes

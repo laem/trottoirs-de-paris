@@ -7,7 +7,8 @@
               [cljsjs.react :as react]
               [cljsjs.leaflet :as leaflet]
               [ajax.core :refer [GET POST]]
-              [cognitect.transit :as t])
+              [cognitect.transit :as t]
+              )
     (:import goog.History))
 
 ;; -------------------------
@@ -25,7 +26,7 @@
                                           map))]
     (do
       (.addTo (.tileLayer js/L (str "http://{s}.tiles.mapbox.com/v4/laem.lihjhd1m/{z}/{x}/{y}.png?access_token=" token)
-                        (clj->js {:attribution "Map data &copy; [...]"
+                        (clj->js {:attribution "Thanks mapbox"
                                   :maxZoom 19}))
             map)
       (GET "/sample" {:handler getHandler}))))

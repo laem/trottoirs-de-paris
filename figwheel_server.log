@@ -1190,3 +1190,20 @@ notifying browser that file changed:  /trotte/core.js
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.147 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
 notifying browser that file changed:  /trotte/core.js
+Figwheel: focusing on build-ids (app)
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.148 seconds.[0m
+notifying browser that file changed:  resources/public/js/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  /trotte/dev.js
+notifying browser that file changed:  /trotte/core.js
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.16 seconds.[0m
+notifying browser that file changed:  /trotte/core.js
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.154 seconds.[0m
+notifying browser that file changed:  /trotte/core.js
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.155 seconds.[0m
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  /trotte/core.js

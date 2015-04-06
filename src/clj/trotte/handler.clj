@@ -1,5 +1,4 @@
 (ns trotte.handler
-  (:use clojure.core.matrix)
   (:require [compojure.core :refer [GET defroutes]]
             [compojure.route :refer [not-found resources]]
             [ring.middleware.defaults :refer [site-defaults wrap-defaults]]
@@ -10,14 +9,10 @@
             [monger.core :as mg]
             [monger.collection :as mc]
             [monger.operators :refer :all]
-            [geo.spatial :as spatial])
-  (:import [com.mongodb MongoOptions ServerAddress]))
-
-(set-current-implementation :vectorz)
-
-(def M (matrix [[1 2] [3 4]]))
-
-(def v (matrix [1 2]))
+            [monger.conversion :refer [from-db-object]]
+            [trotte.mercator :refer [mercator inverted-mercator]])
+  (:import [com.mongodb MongoOptions ServerAddress]
+    org.bson.types.ObjectId))
 
 (def db (mg/get-db (mg/connect) "agreable"))
 
@@ -32,43 +27,79 @@
                                                [2.3788082599639893 48.84600796705691]]]
                                 } } } })
 
-(def nearQuery { :geometry { $near
-                             { "$geometry" {
-                                :type "Point"
-                                :coordinates [2.3788082599639893 48.84600796705691]
-                                }
-                               "$maxDistance" 10} } })
 
-(def seg [[2.379831219812292 48.845304455299846] [2.378934357368756 48.8457372123706]])
-
-(defn divide [a b] (double (/ a b)))
-
-(def radius-earth-paris 6366057)
-
-;; x = R * cos(lat) * cos(lon)
-;; y = R * cos(lat) * sin(lon)
-(defn latlong->cartesian [lat lon]
-  (let [R radius-earth-paris
-        x (* R (Math/cos lat) (Math/cos lon))
-        y (* R (Math/cos lat) (Math/sin lon))]
-    [x y]))
-
-;; lat = asin(z / R)
-;; lon = atan2(y, x)
-;;(defn cartesian->latlong [x y]
-;;  [(Math/asin (divide radius-earth-paris ]
-;;  )
 
 (defn compute-perp [segment d]
-  (let [[[ax ay] [bx by]] segment
-        k (divide d (Math/sqrt
+  "Compute the middle-perpendicular of a segment seg of length d"
+;;We use the mercator projection to work on shapes with cartesian coordinates.
+;;Another approach is to convert the coordinates to the cartesian earth system,
+;;  then rotate it until the z axis crosses Paris.
+;;  Use vectorz-clj and http://stackoverflow.com/a/1185413 with a conversion matrix
+  (let [[A B] segment
+        [ax ay] (mercator A)
+        [bx by] (mercator B)
+        [mx my :as M] [(/ (+ ax bx) 2) (/ (+ ay by) 2)]
+        k (/ d (Math/sqrt
                   (+
                    (Math/pow (- bx ax) 2)
                    (Math/pow (- by ay) 2))))
-        px (+ (* k (- ay by)) (divide (+ ax bx) 2))
-        py (+ (* k (- ax bx)) (divide (+ ay by) 2))]
+        px (+ (* k (- ay by)) mx)
+        py (+ (* k (- bx ax)) my)
+        m (inverted-mercator [mx my])
+        p (inverted-mercator [px py])]
 
-    (apply str [px ", " py])))
+    [m p]))
+
+(defn perp-lineString [coordinates]
+  "Form the perpendicular geojson map"
+  { :type "Feature"
+    :properties {:computed true} ;not part of the real source of features
+    :geometry { :type "LineString"
+                :coordinates coordinates}})
+
+(def nearQuery { :geometry { $near
+                             { "$geometry" {
+                                :type "Point"
+                                :coordinates [ 2.364621097806873, 48.87054776611247 ]
+                                }
+                               "$maxDistance" 20} } })
+(def polygons (mc/find-maps db "v" nearQuery))
+
+
+;; TESTS START with this segment
+(def seg [[2.379831219812292 48.845304455299846] [2.378934357368756 48.8457372123706]])
+(def seg [ [ 2.364545590666204 48.870542444326375 ] [ 2.36458829896837 48.87056413432559 ]])
+
+(def perp (compute-perp seg 50))
+(def lineString (perp-lineString perp))
+
+;perform an aggregation of $geoNear (to get the document distances) and $geoIntersects at the same time
+(def caught (mc/aggregate db "t" [
+   {
+     "$geoNear" {
+        :near {:type "Point" :coordinates (first perp)}
+        :spherical true
+        :maxDistance 50
+        :distanceField "calculated_distance"
+        :query { :geometry { "$geoIntersects" { "$geometry" (:geometry lineString) } }}
+    }}
+]))
+
+;; Is it a trottoir ?
+(contains? #{"BOR" "BTT"} (get-in (first caught) [:properties :info]))
+; YEAH !!
+(:calculated_distance (first caught))
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -83,12 +114,15 @@
     (json/write-str (nth res 2) :value-fn objectId-reader))
   )
 
+(defn sample []
+  (str (json/write-str (perp-lineString (compute-perp seg 50))))
+)
 
 
 ;; ROUTES
 (defroutes routes
   (GET "/" [] (render-file "templates/index.html" {:dev (env :dev?)}))
-  (GET "/sample" [] (str (spatial/earth-radius (spatial/geohash-point 48.84600796705691 2.3788082599639893)))) ;;(compute-perp seg 0.001)
+  (GET "/sample" [] (sample)) ;;
   (resources "/")
   (not-found "Not Found"))
 

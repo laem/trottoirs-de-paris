@@ -24,9 +24,7 @@
                  [com.novemberain/monger "2.1.0"]
                  [cljs-ajax "0.3.10"]
                  [com.cognitect/transit-cljs "0.8.205"]
-                 [factual/geo "1.0.0"]
-                 [net.mikera/core.matrix "0.34.0"]
-                 [net.mikera/vectorz-clj "0.29.0"]]
+                 ]
 
   :plugins [[lein-cljsbuild "1.0.4"]
             [lein-environ "1.0.0"]

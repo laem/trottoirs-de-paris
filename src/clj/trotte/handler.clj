@@ -57,18 +57,33 @@
     :geometry { :type "LineString"
                 :coordinates coordinates}})
 
-(def nearQuery { :geometry { $near
-                             { "$geometry" {
-                                :type "Point"
-                                :coordinates [ 2.364621097806873, 48.87054776611247 ]
-                                }
-                               "$maxDistance" 20} } })
-(def polygons (mc/find-maps db "v" nearQuery))
-
+(defn dump-dups [seq]
+  (for [[id freq] (frequencies seq)  ;; get the frequencies, destructure
+        :when (= freq 1)]            ;; this is the filter condition
+   id))
 
 ;; TESTS START with this segment
 (def seg [[2.379831219812292 48.845304455299846] [2.378934357368756 48.8457372123706]])
 (def seg [ [ 2.364545590666204 48.870542444326375 ] [ 2.36458829896837 48.87056413432559 ]])
+
+(defn drawPerps []
+  (let [nearQuery { :geometry { $near
+                             { "$geometry" {
+                                :type "Point"
+                                :coordinates [ 2.364621097806873, 48.87054776611247 ]
+                                }
+                               "$maxDistance" 10} } }
+        results (mc/find-maps db "v" nearQuery)
+        polygons (map (fn [{{coordinates :coordinates} :geometry}] coordinates) results)
+        all-segments (mapcat
+                   (fn [polygon]
+                     (mapcat
+                       (fn [ring]
+                         (partition 2 1 ring))
+                       polygon))
+                   polygons)
+        lonely-segments (dump-dups all-segments)]
+    lonely-segments))
 
 (def perp (compute-perp seg 50))
 (def lineString (perp-lineString perp))
@@ -122,7 +137,7 @@
 ;; ROUTES
 (defroutes routes
   (GET "/" [] (render-file "templates/index.html" {:dev (env :dev?)}))
-  (GET "/sample" [] (sample)) ;;
+  (GET "/sample" [] (pr-str (drawPerps))) ;;
   (resources "/")
   (not-found "Not Found"))
 

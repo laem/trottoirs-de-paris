@@ -10,12 +10,15 @@
             [monger.collection :as mc]
             [monger.operators :refer :all]
             [monger.conversion :refer [from-db-object]]
-            [trotte.mercator :refer [mercator inverted-mercator segment-length]])
+            [trotte.mercator :refer [mercator inverted-mercator segment-length to-mercator-distance]])
   (:import [com.mongodb MongoOptions ServerAddress]
     org.bson.types.ObjectId))
 
 (def db (mg/get-db (mg/connect) "agreable"))
-
+(defn objectId-reader [key value]
+  (if (= key :_id)
+    (str value)
+    value))
 
 
 
@@ -30,7 +33,8 @@
         [ax ay] (mercator A)
         [bx by] (mercator B)
         [mx my :as M] [(/ (+ ax bx) 2) (/ (+ ay by) 2)]
-        k (/ d (Math/sqrt
+        mercator-d (to-mercator-distance (second A) d)
+        k (/ mercator-d (Math/sqrt
                   (+
                    (Math/pow (- bx ax) 2)
                    (Math/pow (- by ay) 2))))
@@ -53,7 +57,18 @@
         :when (= freq 1)]            ;; this is the filter condition
    id))
 
-
+;perform an aggregation of $geoNear (to get the document distances) and $geoIntersects at the same time
+(defn catch-trottoirs [perp radius]
+  (mc/aggregate db "t" [
+     {
+       "$geoNear" {
+          :near {:type "Point" :coordinates (first perp)}
+          :spherical true
+          :maxDistance radius
+          :distanceField "calculated_distance"
+          :query { :geometry { "$geoIntersects" { "$geometry" (:geometry (perp-lineString perp)) } }}
+      }}
+  ]))
 
 ;; TESTS START with this segment
 (def seg [[2.379831219812292 48.845304455299846] [2.378934357368756 48.8457372123706]])
@@ -63,9 +78,9 @@
   (let [nearQuery { :geometry { $near
                              { "$geometry" {
                                 :type "Point"
-                                :coordinates [2.379831219812292 48.845304455299846]
+                                :coordinates [2.3795807361602783 48.84644395021793]
                                 }
-                               "$maxDistance" 40} } }
+                               "$maxDistance" 100} } }
         ;; get some bati geojson
         results (mc/find-maps db "v" nearQuery)
         ;; get their coordinates
@@ -80,26 +95,20 @@
                    polygons)
         ;; remove shared (duplicate) segments, since they can't be near a trottoir
         lonely-segments (dump-dups all-segments)
-        ;; remove short segments, they usually are corners of bati
-        filtered-segments (filter (fn [s] (> (segment-length s) 2)) lonely-segments)
+        ;; remove short segments, they usually are corners of bati. This is a problem with round structures TODO
+        filtered-segments (filter (fn [s] (> (segment-length s) 5)) lonely-segments)
         ;; compute perpendicular segments
-        perps (map (fn [lseg] (perp-lineString (compute-perp lseg 15))) filtered-segments)]
-    (json/write-str perps)))
+        perps (map (fn [lseg] [lseg (compute-perp lseg 20)]) filtered-segments)
+        ;; check whether this perpendicular's first intersection is a bordure trottoir
+        hits (mapcat (fn [[lseg perp]]
+                       (let [first-caught (first (catch-trottoirs perp 60))
+                             valid (= "BOR" (get-in first-caught [:properties :info]))]
+                         (if valid [(compute-perp lseg (:calculated_distance first-caught))] [])))
+                  perps)
+        ]
+    ;(json/write-str (map perp-lineString (map (fn [[lseg perp]] perp) perps)) :value-fn objectId-reader)))
+    (json/write-str (map perp-lineString hits) :value-fn objectId-reader)))
 
-(def perp (compute-perp seg 50))
-(def lineString (perp-lineString perp))
-
-;perform an aggregation of $geoNear (to get the document distances) and $geoIntersects at the same time
-(def caught (mc/aggregate db "t" [
-   {
-     "$geoNear" {
-        :near {:type "Point" :coordinates (first perp)}
-        :spherical true
-        :maxDistance 50
-        :distanceField "calculated_distance"
-        :query { :geometry { "$geoIntersects" { "$geometry" (:geometry lineString) } }}
-    }}
-]))
 
 ;; Is it a trottoir ?
 (contains? #{"BOR" "BTT"} (get-in (first caught) [:properties :info]))
@@ -120,10 +129,7 @@
 
 
 
-(defn objectId-reader [key value]
-  (if (= key :_id)
-    (str value)
-    value))
+
 
 (comment
 (defn getSample []

@@ -20,3 +20,12 @@
 
 (inverted-mercator (mercator [2.378934357368756 48.8457372123706]))
 (mercator [2.378934357368756 48.8457372123706])
+
+;; compute approximate length of a short segment (distance between its too points)
+(defn segment-length [segment]
+  (let [[[ax ay] [bx by]] (map #(mercator %1) segment)]
+    (* (Math/sqrt (+ (Math/pow (- bx ax) 2) (Math/pow (- by ay) 2))) (Math/cos ( * (second (first segment)) rad-per-deg)))
+    ))
+
+;; approximately 59
+(segment-length [[2.378250360488891 48.84622684166889] [2.3790442943573 48.84632215773317]])

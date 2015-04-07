@@ -1,6 +1,15 @@
 (comment
 
-
+(def withinQuery { :geometry { $geoWithin
+                             { "$geometry"
+                               {
+                                :type "Polygon"
+                                :coordinates [[[2.3788082599639893 48.84600796705691]
+                                               [2.3788082599639893 48.84652337993973]
+                                               [2.3798999190330505 48.84652337993973]
+                                               [2.3798999190330505 48.84600796705691]
+                                               [2.3788082599639893 48.84600796705691]]]
+                                } } } })
 
 (mc/remove-by-id db "t" (str segOid "-perp"))
   ;insert the perp in the collection

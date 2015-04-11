@@ -14,6 +14,7 @@
   (:import [com.mongodb MongoOptions ServerAddress]
     org.bson.types.ObjectId))
 
+;;; DB ;;;;;;;;;;;
 (def db (mg/get-db (mg/connect) "agreable"))
 (defn objectId-reader [key value]
   (if (= key :_id)
@@ -22,6 +23,7 @@
 
 
 
+;;; Utils ;;;;;;;;;;;
 
 (defn compute-perp [segment d]
   "Compute the middle-perpendicular of a segment seg of length d"
@@ -57,23 +59,28 @@
         :when (= freq 1)]            ;; this is the filter condition
    id))
 
-;perform an aggregation of $geoNear (to get the document distances) and $geoIntersects at the same time
-(defn catch-trottoirs [perp radius]
-  (mc/aggregate db "t" [
-     {
-       "$geoNear" {
-          :near {:type "Point" :coordinates (first perp)}
-          :spherical true
-          :maxDistance radius
-          :distanceField "calculated_distance"
-          :query { :geometry { "$geoIntersects" { "$geometry" (:geometry (perp-lineString perp)) } }}
-      }}
-  ]))
+;; perform a mongodb aggregation of $geoNear (just to get the document distances, increasing) and $geoIntersects
+;; take the closest result of two requests, since shapes were separated in two collections
+(defn closest-shape [perp radius]
+  (let [ q
+         (fn [coll]
+           (mc/aggregate
+            db
+            coll
+            [{
+              "$geoNear" {
+                          :near {:type "Point" :coordinates (first perp)}
+                          :spherical true
+                          :maxDistance radius
+                          :distanceField "calculated_distance"
+                          :query { :geometry { "$geoIntersects" { "$geometry" (:geometry (perp-lineString perp)) } }}
+                          }}]))]
+    (apply min-key #(if (nil? %) 10000 (:calculated_distance %)) (map (comp first q) ["t" "v"]))
+    ))
 
-;; TESTS START with this segment
-(def seg [[2.379831219812292 48.845304455299846] [2.378934357368756 48.8457372123706]])
-(def seg [[2.364545590666204 48.870542444326375] [2.36458829896837 48.87056413432559]])
+(apply min-key identity (remove nil? [ nil 1]))
 
+;;; Main function ;;;;;;;;;;;
 (defn drawPerps []
   (let [nearQuery { :geometry { $near
                              { "$geometry" {
@@ -87,12 +94,12 @@
         polygons (map (fn [{{coordinates :coordinates} :geometry}] coordinates) results)
         ;; collect all the polygon segments
         all-segments (mapcat
-                   (fn [polygon]
-                     (mapcat
-                       (fn [ring]
-                         (partition 2 1 ring))
-                       polygon))
-                   polygons)
+                       (fn [polygon]
+                         (mapcat
+                           (fn [ring]
+                             (partition 2 1 ring))
+                           polygon))
+                       polygons)
         ;; remove shared (duplicate) segments, since they can't be near a trottoir
         lonely-segments (dump-dups all-segments)
         ;; remove short segments, they usually are corners of bati. This is a problem with round structures TODO
@@ -101,45 +108,17 @@
         perps (map (fn [lseg] [lseg (compute-perp lseg 20)]) filtered-segments)
         ;; check whether this perpendicular's first intersection is a bordure trottoir
         hits (mapcat (fn [[lseg perp]]
-                       (let [first-caught (first (catch-trottoirs perp 60))
-                             valid (= "BOR" (get-in first-caught [:properties :info]))]
-                         (if valid [(compute-perp lseg (:calculated_distance first-caught))] [])))
+                       (let [closest (closest-shape perp 60)
+                             valid (= "BOR" (get-in closest [:properties :info]))]
+                         [valid]
+                         (if valid [(compute-perp lseg (:calculated_distance closest))] [])
+                         ))
                   perps)
         ]
-    ;(json/write-str (map perp-lineString (map (fn [[lseg perp]] perp) perps)) :value-fn objectId-reader)))
-    (json/write-str (map perp-lineString hits) :value-fn objectId-reader)))
+    ;(json/write-str hits :value-fn objectId-reader)
+    (json/write-str (map perp-lineString hits) :value-fn objectId-reader)
+    ))
 
-
-;; Is it a trottoir ?
-(contains? #{"BOR" "BTT"} (get-in (first caught) [:properties :info]))
-; YEAH !!
-(:calculated_distance (first caught))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-(comment
-(defn getSample []
-  (let [res (mc/find-maps db "v" nearQuery)]
-    (json/write-str (nth res 2) :value-fn objectId-reader))
-  ))
-
-(defn sample []
-  (str (json/write-str (perp-lineString (compute-perp seg 50))))
-)
 
 
 ;; ROUTES

@@ -26,7 +26,7 @@
 ;;; Utils ;;;;;;;;;;;
 
 (defn compute-perp [segment d]
-  "Compute the middle-perpendicular of a segment seg of length d"
+  "Compute the middle-perpendicular of length d of a long-lat segment"
 ;;We use the mercator projection to work on shapes with cartesian coordinates.
 ;;Another approach is to convert the coordinates to the cartesian earth system,
 ;;  then rotate it until the z axis crosses Paris.
@@ -47,16 +47,34 @@
 
     [m p]))
 
-(defn perp-lineString [coordinates]
+
+(defn compute-perp-polygon [[A B] [M P]]
+  (let [[ax ay] (mercator A)
+        [bx by] (mercator B)
+        [mx my] (mercator M)
+        [px py] (mercator P)
+        mpx (- px mx)
+        mpy (- py my)
+        C (inverted-mercator [(+ bx mpx) (+ by mpy)])
+        D (inverted-mercator [(+ ax mpx) (+ ay mpy)])]
+    [
+      [A B C D A]
+      ]))
+
+(def mseg [[2.379831219812292 48.845304455299846] [2.378934357368756 48.8457372123706]])
+(def mperp [[2.379382788590524 48.84552083430268] [2.3791172006642896 48.84528245774338]])
+(compute-perp-polygon mseg mperp)
+
+(defn geo-feature [geo-type coordinates]
   "Form the perpendicular geojson map"
   { :type "Feature"
     :properties {:computed true} ;not part of the real source of features
-    :geometry { :type "LineString"
+    :geometry { :type geo-type
                 :coordinates coordinates}})
 
 (defn dump-dups [seq]
-  (for [[group els] (group-by :coords seq)  ;; get the frequencies, destructure
-        :when (= (count els) 1)]            ;; this is the filter condition
+  (for [[group els] (group-by :coords seq)
+        :when (= (count els) 1)]
    (first els)))
 
 
@@ -75,7 +93,7 @@
                           :maxDistance radius
                           :distanceField "calculated_distance"
                           :query {:_id {"$ne" id }
-                                  :geometry { "$geoIntersects" { "$geometry" (:geometry (perp-lineString perp)) } }}
+                                  :geometry { "$geoIntersects" { "$geometry" (:geometry (geo-feature "LineString" perp)) } }}
                           }}]))]
     (apply min-key
            #(if (nil? %) 10000 ;; this because I don't know how to code
@@ -90,9 +108,10 @@
   (let [nearQuery { :geometry { $near
                              { "$geometry" {
                                 :type "Point"
-                                :coordinates [2.378979921340942 48.84630097640122]
+                                :coordinates [2.3449641466140747 48.87105583726818] ; Grands boulevards
+                                ;:coordinates [2.378979921340942 48.84630097640122] ; diderot
                                 }
-                               "$maxDistance" 200} } }
+                               "$maxDistance" 60} } }
         ;; get some bati geojson
         results (mc/find-maps db "v" nearQuery)
         ;; get their coordinates
@@ -115,15 +134,18 @@
         hits (mapcat (fn [[seg perp]]
                        (let [closest (closest-shape perp (:_id seg) 60)
                              valid (= "BOR" (get-in closest [:properties :info]))]
-                         (if valid [(compute-perp (:coords seg) (:calculated_distance closest))] [])
-                         ;;[closest]
+                         (if valid
+                           (let [seg-coords (:coords seg)
+                                 d-perp (compute-perp (:coords seg) (:calculated_distance closest))]
+                             [(compute-perp-polygon seg-coords d-perp)])
+                           [])
                          ))
                   perps)
         ]
-    ;;(json/write-str (map (comp perp-lineString second) perps) :value-fn objectId-reader)
+    ;;(json/write-str (map (comp geo-feature second) perps) :value-fn objectId-reader)
     ;;(json/write-str (remove nil? hits) :value-fn objectId-reader)
     ;;(json/write-str filtered-segments :value-fn objectId-reader)
-    (json/write-str (map perp-lineString hits) :value-fn objectId-reader)
+    (json/write-str (map #(geo-feature "Polygon" %) hits) :value-fn objectId-reader)
     ))
 
 

@@ -1207,3 +1207,160 @@ notifying browser that file changed:  /trotte/core.js
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.155 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
 notifying browser that file changed:  /trotte/core.js
+Figwheel: focusing on build-ids (app)
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.138 seconds.[0m
+notifying browser that file changed:  resources/public/js/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  /trotte/dev.js
+notifying browser that file changed:  /trotte/core.js
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.201 seconds.[0m
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  /trotte/core.js
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.192 seconds.[0m
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  /trotte/core.js
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.191 seconds.[0m
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  /trotte/core.js
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.149 seconds.[0m
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  /trotte/core.js
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.153 seconds.[0m
+notifying browser that file changed:  /trotte/core.js
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.153 seconds.[0m
+notifying browser that file changed:  /trotte/core.js
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.139 seconds.[0m
+notifying browser that file changed:  /trotte/core.js
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.141 seconds.[0m
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  /trotte/core.js
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.209 seconds.[0m
+notifying browser that file changed:  /trotte/core.js
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.143 seconds.[0m
+notifying browser that file changed:  /trotte/core.js
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.146 seconds.[0m
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  /trotte/core.js
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.135 seconds.[0m
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  /trotte/core.js
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.137 seconds.[0m
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  /trotte/core.js
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[31mCompiling "resources/public/js/app.js" failed.[0m
+[31mclojure.lang.ExceptionInfo: [39m[31mfailed compiling file:src/cljs/trotte/core.cljs[39m
+[35m               core.clj:4403 clojure.core/ex-info[39m
+[32m           compiler.clj:1122 cljs.compiler/compile-file[fn][39m
+[32m           compiler.clj:1090 cljs.compiler/compile-file[39m
+[32m           compiler.clj:1152 cljs.compiler/compile-root[39m
+[32m             closure.clj:367 cljs.closure/compile-dir[39m
+[32m             closure.clj:407 cljs.closure/eval12185[fn][39m
+[32m             closure.clj:315 cljs.closure/eval12121[fn][39m
+[32m             closure.clj:421 cljs.closure/eval12172[fn][39m
+[32m             closure.clj:315 cljs.closure/eval12121[fn][39m
+[32m                 core.clj:18 clojurescript-build.core.CompilableSourcePaths/fn[39m
+[35m               core.clj:2557 clojure.core/map[fn][39m
+[36m             LazySeq.java:40 clojure.lang.LazySeq.sval[39m
+[36m             LazySeq.java:49 clojure.lang.LazySeq.seq[39m
+[36m                 RT.java:484 clojure.lang.RT.seq[39m
+[35m                core.clj:133 clojure.core/seq[39m
+[35m                core.clj:624 clojure.core/apply[39m
+[35m               core.clj:2586 clojure.core/mapcat[39m
+[36m             RestFn.java:423 clojure.lang.RestFn.invoke[39m
+[32m                 core.clj:18 clojurescript-build.core/clojurescript-build.core.CompilableSourcePaths[39m
+[32m            closure.clj:1413 cljs.closure/build[39m
+[32m                core.clj:150 clojurescript-build.core/build-source-paths*[39m
+[32m         auto_builder.clj:59 figwheel-sidecar.auto-builder/warning[fn][39m
+[32m                 auto.clj:55 clojurescript-build.auto/time-build[fn][39m
+[32m                 auto.clj:64 clojurescript-build.auto/after[fn][39m
+[32m                 auto.clj:64 clojurescript-build.auto/after[fn][39m
+[32m                 auto.clj:64 clojurescript-build.auto/after[fn][39m
+[32m                 auto.clj:71 clojurescript-build.auto/error[fn][39m
+[32m                 auto.clj:60 clojurescript-build.auto/before[fn][39m
+[32m                auto.clj:103 clojurescript-build.auto/make-conditional-builder[fn][39m
+[35m               core.clj:6353 clojure.core/mapv[fn][39m
+[36m          ArrayChunk.java:58 clojure.lang.ArrayChunk.reduce[39m
+[35m            protocols.clj:98 clojure.core.protocols/fn[39m
+[35m            protocols.clj:19 clojure.core.protocols/fn[fn][39m
+[35m            protocols.clj:31 clojure.core.protocols/seq-reduce[39m
+[35m            protocols.clj:60 clojure.core.protocols/fn[39m
+[35m            protocols.clj:13 clojure.core.protocols/fn[fn][39m
+[35m               core.clj:6289 clojure.core/reduce[39m
+[35m               core.clj:6353 clojure.core/mapv[39m
+[32m                auto.clj:184 clojurescript-build.auto/autobuild*[fn][39m
+[32m                auto.clj:177 clojurescript-build.auto/autobuild*[fn][39m
+[35m          ioc_macros.clj:940 clojure.core.async.impl.ioc-macros/run-state-machine[39m
+[35m          ioc_macros.clj:944 clojure.core.async.impl.ioc-macros/run-state-machine-wrapped[39m
+[35m               async.clj:362 clojure.core.async/ioc-alts![fn][39m
+[35m               async.clj:231 clojure.core.async/do-alts[fn][39m
+[35m            channels.clj:262 clojure.core.async.impl.channels.ManyToManyChannel/fn[39m
+[36m                 AFn.java:22 clojure.lang.AFn.run[39m
+[34mThreadPoolExecutor.java:1142 java.util.concurrent.ThreadPoolExecutor.runWorker[39m
+[34m ThreadPoolExecutor.java:617 java.util.concurrent.ThreadPoolExecutor$Worker.run[39m
+[34m             Thread.java:745 java.lang.Thread.run[39m
+[31mCaused by: [39m[31mclojure.lang.ExceptionInfo: [39m[31mMap literal must contain an even number of forms[39m
+[35m               core.clj:4403 clojure.core/ex-info[39m
+[35m        reader_types.clj:336 clojure.tools.reader.reader-types/reader-error[39m
+[36m             RestFn.java:423 clojure.lang.RestFn.invoke[39m
+[35m              reader.clj:213 clojure.tools.reader/read-map[39m
+[35m              reader.clj:166 clojure.tools.reader/read-delimited[39m
+[35m              reader.clj:209 clojure.tools.reader/read-map[39m
+[35m              reader.clj:166 clojure.tools.reader/read-delimited[39m
+[35m              reader.clj:177 clojure.tools.reader/read-list[39m
+[35m              reader.clj:166 clojure.tools.reader/read-delimited[39m
+[35m              reader.clj:177 clojure.tools.reader/read-list[39m
+[35m              reader.clj:166 clojure.tools.reader/read-delimited[39m
+[35m              reader.clj:177 clojure.tools.reader/read-list[39m
+[35m              reader.clj:166 clojure.tools.reader/read-delimited[39m
+[35m              reader.clj:177 clojure.tools.reader/read-list[39m
+[35m              reader.clj:166 clojure.tools.reader/read-delimited[39m
+[35m              reader.clj:194 clojure.tools.reader/read-vector[39m
+[35m              reader.clj:166 clojure.tools.reader/read-delimited[39m
+[35m              reader.clj:177 clojure.tools.reader/read-list[39m
+[35m              reader.clj:166 clojure.tools.reader/read-delimited[39m
+[35m              reader.clj:177 clojure.tools.reader/read-list[39m
+[35m              reader.clj:743 clojure.tools.reader/read[39m
+[35m              reader.clj:729 clojure.tools.reader/read[39m
+[32m           analyzer.clj:1971 cljs.analyzer/forms-seq[fn][39m
+[32m           analyzer.clj:1965 cljs.analyzer/forms-seq[fn][39m
+[36m             LazySeq.java:40 clojure.lang.LazySeq.sval[39m
+[36m             LazySeq.java:49 clojure.lang.LazySeq.seq[39m
+[36m                 RT.java:484 clojure.lang.RT.seq[39m
+[35m                core.clj:133 clojure.core/seq[39m
+[32m           compiler.clj:1006 cljs.compiler/compile-file*[fn][39m
+[32m            compiler.clj:950 cljs.compiler/with-core-cljs[39m
+[32m            compiler.clj:970 cljs.compiler/compile-file*[39m
+[32m           compiler.clj:1107 cljs.compiler/compile-file[fn][39m
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.14 seconds.[0m
+notifying browser that file changed:  /trotte/core.js
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.138 seconds.[0m
+notifying browser that file changed:  /trotte/core.js
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.147 seconds.[0m
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  /trotte/core.js
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.146 seconds.[0m
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  /trotte/core.js
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.156 seconds.[0m
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  /trotte/core.js

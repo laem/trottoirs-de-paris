@@ -55,13 +55,14 @@
                 :coordinates coordinates}})
 
 (defn dump-dups [seq]
-  (for [[id freq] (frequencies seq)  ;; get the frequencies, destructure
-        :when (= freq 1)]            ;; this is the filter condition
-   id))
+  (for [[group els] (group-by :coords seq)  ;; get the frequencies, destructure
+        :when (= (count els) 1)]            ;; this is the filter condition
+   (first els)))
+
 
 ;; perform a mongodb aggregation of $geoNear (just to get the document distances, increasing) and $geoIntersects
 ;; take the closest result of two requests, since shapes were separated in two collections
-(defn closest-shape [perp radius]
+(defn closest-shape [perp id radius]
   (let [ q
          (fn [coll]
            (mc/aggregate
@@ -73,9 +74,13 @@
                           :spherical true
                           :maxDistance radius
                           :distanceField "calculated_distance"
-                          :query { :geometry { "$geoIntersects" { "$geometry" (:geometry (perp-lineString perp)) } }}
+                          :query {:_id {"$ne" id }
+                                  :geometry { "$geoIntersects" { "$geometry" (:geometry (perp-lineString perp)) } }}
                           }}]))]
-    (apply min-key #(if (nil? %) 10000 (:calculated_distance %)) (map (comp first q) ["t" "v"]))
+    (apply min-key
+           #(if (nil? %) 10000 ;; this because I don't know how to code
+             (:calculated_distance %))
+           (map (comp first q) ["v" "t"]))
     ))
 
 (apply min-key identity (remove nil? [ nil 1]))
@@ -85,37 +90,39 @@
   (let [nearQuery { :geometry { $near
                              { "$geometry" {
                                 :type "Point"
-                                :coordinates [2.3795807361602783 48.84644395021793]
+                                :coordinates [2.378979921340942 48.84630097640122]
                                 }
-                               "$maxDistance" 100} } }
+                               "$maxDistance" 200} } }
         ;; get some bati geojson
         results (mc/find-maps db "v" nearQuery)
         ;; get their coordinates
-        polygons (map (fn [{{coordinates :coordinates} :geometry}] coordinates) results)
+        polygons (map (fn [{id :_id {coordinates :coordinates} :geometry}] {:coords coordinates :id id}) results)
         ;; collect all the polygon segments
         all-segments (mapcat
-                       (fn [polygon]
+                       (fn [{:keys [id coords]}]
                          (mapcat
                            (fn [ring]
-                             (partition 2 1 ring))
-                           polygon))
+                             (map #(assoc {:_id id} :coords %) (partition 2 1 ring)))
+                           coords))
                        polygons)
         ;; remove shared (duplicate) segments, since they can't be near a trottoir
         lonely-segments (dump-dups all-segments)
         ;; remove short segments, they usually are corners of bati. This is a problem with round structures TODO
-        filtered-segments (filter (fn [s] (> (segment-length s) 5)) lonely-segments)
-        ;; compute perpendicular segments
-        perps (map (fn [lseg] [lseg (compute-perp lseg 20)]) filtered-segments)
+        filtered-segments (filter (fn [seg] (> (segment-length (:coords seg)) 5)) lonely-segments)
+        ;; compute [origin-segment corresponding-perpendicular-segment]
+        perps (map (fn [seg] [seg (compute-perp (:coords seg) 20)]) filtered-segments)
         ;; check whether this perpendicular's first intersection is a bordure trottoir
-        hits (mapcat (fn [[lseg perp]]
-                       (let [closest (closest-shape perp 60)
+        hits (mapcat (fn [[seg perp]]
+                       (let [closest (closest-shape perp (:_id seg) 60)
                              valid (= "BOR" (get-in closest [:properties :info]))]
-                         [valid]
-                         (if valid [(compute-perp lseg (:calculated_distance closest))] [])
+                         (if valid [(compute-perp (:coords seg) (:calculated_distance closest))] [])
+                         ;;[closest]
                          ))
                   perps)
         ]
-    ;(json/write-str hits :value-fn objectId-reader)
+    ;;(json/write-str (map (comp perp-lineString second) perps) :value-fn objectId-reader)
+    ;;(json/write-str (remove nil? hits) :value-fn objectId-reader)
+    ;;(json/write-str filtered-segments :value-fn objectId-reader)
     (json/write-str (map perp-lineString hits) :value-fn objectId-reader)
     ))
 

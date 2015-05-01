@@ -20,7 +20,8 @@ node d.js
 mongoimport --db agreable --collection t --file d.ok.json --jsonArray
 ```
 
-
+Then import the Bati file. TODO C
+Some of theme are wrong TODO C
 
 
 Failed attempt with topojson :

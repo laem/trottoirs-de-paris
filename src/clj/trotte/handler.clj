@@ -79,29 +79,30 @@
 
 
 ;; perform a mongodb aggregation of $geoNear (just to get the document distances, increasing) and $geoIntersects
+;; on the two collections
 ;; take the closest result of two requests, since shapes were separated in two collections
 (defn closest-shape [perp id radius]
-  (let [ q
-         (fn [coll]
-           (mc/aggregate
-            db
-            coll
-            [{
-              "$geoNear" {
-                          :near {:type "Point" :coordinates (first perp)}
-                          :spherical true
-                          :maxDistance radius
-                          :distanceField "calculated_distance"
-                          :query {:_id {"$ne" id }
-                                  :geometry { "$geoIntersects" { "$geometry" (:geometry (geo-feature "LineString" perp)) } }}
-                          }}]))]
+  (let [ q (fn [coll]
+             (mc/aggregate
+              db
+              coll
+              [{
+                "$geoNear" {
+                            :near {:type "Point" :coordinates (first perp)}
+                            :spherical true
+                            :maxDistance radius
+                            :distanceField "calculated_distance"
+                            :query {:_id {"$ne" id }
+                                    :geometry { "$geoIntersects" { "$geometry" (:geometry (geo-feature "LineString" perp)) } }}
+                            }}]))
+         [v-results t-results] (map q ["v" "t"])
+         bordures (filter (fn [t] (= "BOR" (get-in t [:properties :info]))) t-results)]
     (apply min-key
            #(if (nil? %) 10000 ;; this because I don't know how to code
              (:calculated_distance %))
-           (map (comp first q) ["v" "t"]))
+           (map first [v-results bordures]))
     ))
 
-(apply min-key identity (remove nil? [ nil 1]))
 
 ;;; Main function ;;;;;;;;;;;
 (defn drawPerps []

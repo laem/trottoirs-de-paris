@@ -65,10 +65,10 @@
 (def mperp [[2.379382788590524 48.84552083430268] [2.3791172006642896 48.84528245774338]])
 (compute-perp-polygon mseg mperp)
 
-(defn geo-feature [geo-type coordinates]
+(defn geo-feature [geo-type coordinates properties]
   "Form the perpendicular geojson map"
   { :type "Feature"
-    :properties {:computed true} ;not part of the real source of features
+    :properties (merge properties {:computed true}) ;not part of the real source of features
     :geometry { :type geo-type
                 :coordinates coordinates}})
 
@@ -93,7 +93,7 @@
                             :maxDistance radius
                             :distanceField "calculated_distance"
                             :query {:_id {"$ne" id }
-                                    :geometry { "$geoIntersects" { "$geometry" (:geometry (geo-feature "LineString" perp)) } }}
+                                    :geometry { "$geoIntersects" { "$geometry" (:geometry (geo-feature "LineString" perp nil)) } }}
                             }}]))
          [v-results t-results] (map q ["v" "t"])
          bordures (filter (fn [t] (= "BOR" (get-in t [:properties :info]))) t-results)]
@@ -109,10 +109,10 @@
   (let [nearQuery { :geometry { $near
                              { "$geometry" {
                                 :type "Point"
-                                :coordinates [2.3449641466140747 48.87105583726818] ; Grands boulevards
-                                ;:coordinates [2.378979921340942 48.84630097640122] ; diderot
+                                ;:coordinates [2.3449641466140747 48.87105583726818] ; Grands boulevards
+                                :coordinates [2.378979921340942 48.84630097640122] ; diderot
                                 }
-                               "$maxDistance" 60} } }
+                               "$maxDistance" 200} } }
         ;; get some bati geojson
         results (mc/find-maps db "v" nearQuery)
         ;; get their coordinates
@@ -138,7 +138,10 @@
                          (if valid
                            (let [seg-coords (:coords seg)
                                  d-perp (compute-perp (:coords seg) (:calculated_distance closest))]
-                             [(compute-perp-polygon seg-coords d-perp)])
+                             [{
+                               :coordinates (compute-perp-polygon seg-coords d-perp)
+                               :properties {:t-width (segment-length d-perp) }
+                               }])
                            [])
                          ))
                   perps)
@@ -146,7 +149,9 @@
     ;;(json/write-str (map (comp geo-feature second) perps) :value-fn objectId-reader)
     ;;(json/write-str (remove nil? hits) :value-fn objectId-reader)
     ;;(json/write-str filtered-segments :value-fn objectId-reader)
-    (json/write-str (map #(geo-feature "Polygon" %) hits) :value-fn objectId-reader)
+    (str "{ \"type\": \"FeatureCollection\",\"features\": "
+         (json/write-str (map #(geo-feature "Polygon" (:coordinates %) (:properties %)) hits) :value-fn objectId-reader)
+         "}")
     ))
 
 

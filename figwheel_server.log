@@ -3,65 +3,65 @@ Figwheel: focusing on build-ids (app)
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.125 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/goog/deps.js
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
-notifying browser that file changed:  /trotte/core.js
-notifying browser that file changed:  /trotte/dev.js
+notifying browser that file changed:  /trottoirs/core.js
+notifying browser that file changed:  /trottoirs/dev.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.136 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
-notifying browser that file changed:  /trotte/core.js
-notifying browser that file changed:  /trotte/dev.js
+notifying browser that file changed:  /trottoirs/core.js
+notifying browser that file changed:  /trottoirs/dev.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.131 seconds.[0m
-notifying browser that file changed:  /trotte/core.js
-notifying browser that file changed:  /trotte/dev.js
+notifying browser that file changed:  /trottoirs/core.js
+notifying browser that file changed:  /trottoirs/dev.js
 Figwheel: focusing on build-ids (app)
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.189 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/goog/deps.js
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
-notifying browser that file changed:  /trotte/dev.js
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/dev.js
+notifying browser that file changed:  /trottoirs/core.js
 Figwheel: focusing on build-ids (app)
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.218 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/goog/deps.js
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
-notifying browser that file changed:  /trotte/dev.js
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/dev.js
+notifying browser that file changed:  /trottoirs/core.js
 Figwheel: focusing on build-ids (app)
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.137 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/goog/deps.js
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
-notifying browser that file changed:  /trotte/dev.js
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/dev.js
+notifying browser that file changed:  /trottoirs/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.353 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.129 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.132 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.131 seconds.[0m
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.137 seconds.[0m
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
-WARNING: Use of undeclared Var trotte.core/home at line 23 src/cljs/trotte/core.cljs
+WARNING: Use of undeclared Var trottoirs.core/home at line 23 src/cljs/trottoirs/core.cljs
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.209 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
-WARNING: Use of undeclared Var trotte.core/home at line 23 src/cljs/trotte/core.cljs
+WARNING: Use of undeclared Var trottoirs.core/home at line 23 src/cljs/trottoirs/core.cljs
 [31mCompiling "resources/public/js/app.js" failed.[0m
-[31mclojure.lang.ExceptionInfo: [39m[31mfailed compiling file:src/cljs/trotte/core.cljs[39m
+[31mclojure.lang.ExceptionInfo: [39m[31mfailed compiling file:src/cljs/trottoirs/core.cljs[39m
 [35m               core.clj:4403 clojure.core/ex-info[39m
 [32m           compiler.clj:1122 cljs.compiler/compile-file[fn][39m
 [32m           compiler.clj:1090 cljs.compiler/compile-file[39m
@@ -111,7 +111,7 @@ WARNING: Use of undeclared Var trotte.core/home at line 23 src/cljs/trotte/core.
 [34mThreadPoolExecutor.java:1142 java.util.concurrent.ThreadPoolExecutor.runWorker[39m
 [34m ThreadPoolExecutor.java:617 java.util.concurrent.ThreadPoolExecutor$Worker.run[39m
 [34m             Thread.java:745 java.lang.Thread.run[39m
-[31mCaused by: [39m[31mclojure.lang.ExceptionInfo: [39m[31mUnable to resolve var: home-page in this context at line 44 src/cljs/trotte/core.cljs[39m
+[31mCaused by: [39m[31mclojure.lang.ExceptionInfo: [39m[31mUnable to resolve var: home-page in this context at line 44 src/cljs/trottoirs/core.cljs[39m
 [35m               core.clj:4403 clojure.core/ex-info[39m
 [32m            analyzer.clj:379 cljs.analyzer/error[39m
 [32m            analyzer.clj:376 cljs.analyzer/error[39m
@@ -221,7 +221,7 @@ WARNING: Use of undeclared Var trotte.core/home at line 23 src/cljs/trotte/core.
 [32m           compiler.clj:1107 cljs.compiler/compile-file[fn][39m
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [31mCompiling "resources/public/js/app.js" failed.[0m
-[31mclojure.lang.ExceptionInfo: [39m[31mfailed compiling file:src/cljs/trotte/core.cljs[39m
+[31mclojure.lang.ExceptionInfo: [39m[31mfailed compiling file:src/cljs/trottoirs/core.cljs[39m
 [35m               core.clj:4403 clojure.core/ex-info[39m
 [32m           compiler.clj:1122 cljs.compiler/compile-file[fn][39m
 [32m           compiler.clj:1090 cljs.compiler/compile-file[39m
@@ -271,7 +271,7 @@ WARNING: Use of undeclared Var trotte.core/home at line 23 src/cljs/trotte/core.
 [34mThreadPoolExecutor.java:1142 java.util.concurrent.ThreadPoolExecutor.runWorker[39m
 [34m ThreadPoolExecutor.java:617 java.util.concurrent.ThreadPoolExecutor$Worker.run[39m
 [34m             Thread.java:745 java.lang.Thread.run[39m
-[31mCaused by: [39m[31mclojure.lang.ExceptionInfo: [39m[31mUnable to resolve var: home-page in this context at line 45 src/cljs/trotte/core.cljs[39m
+[31mCaused by: [39m[31mclojure.lang.ExceptionInfo: [39m[31mUnable to resolve var: home-page in this context at line 45 src/cljs/trottoirs/core.cljs[39m
 [35m               core.clj:4403 clojure.core/ex-info[39m
 [32m            analyzer.clj:379 cljs.analyzer/error[39m
 [32m            analyzer.clj:376 cljs.analyzer/error[39m
@@ -382,10 +382,10 @@ WARNING: Use of undeclared Var trotte.core/home at line 23 src/cljs/trotte/core.
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.118 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [31mCompiling "resources/public/js/app.js" failed.[0m
-[31mclojure.lang.ExceptionInfo: [39m[31mfailed compiling file:src/cljs/trotte/core.cljs[39m
+[31mclojure.lang.ExceptionInfo: [39m[31mfailed compiling file:src/cljs/trottoirs/core.cljs[39m
 [35m               core.clj:4403 clojure.core/ex-info[39m
 [32m           compiler.clj:1122 cljs.compiler/compile-file[fn][39m
 [32m           compiler.clj:1090 cljs.compiler/compile-file[39m
@@ -435,7 +435,7 @@ notifying browser that file changed:  /trotte/core.js
 [34mThreadPoolExecutor.java:1142 java.util.concurrent.ThreadPoolExecutor.runWorker[39m
 [34m ThreadPoolExecutor.java:617 java.util.concurrent.ThreadPoolExecutor$Worker.run[39m
 [34m             Thread.java:745 java.lang.Thread.run[39m
-[31mCaused by: [39m[31mclojure.lang.ExceptionInfo: [39m[31mUnable to resolve var: home-page in this context at line 45 src/cljs/trotte/core.cljs[39m
+[31mCaused by: [39m[31mclojure.lang.ExceptionInfo: [39m[31mUnable to resolve var: home-page in this context at line 45 src/cljs/trottoirs/core.cljs[39m
 [35m               core.clj:4403 clojure.core/ex-info[39m
 [32m            analyzer.clj:379 cljs.analyzer/error[39m
 [32m            analyzer.clj:376 cljs.analyzer/error[39m
@@ -546,23 +546,23 @@ notifying browser that file changed:  /trotte/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.121 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.13 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.126 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 sending changed CSS file: resources/public/css/leaflet.css
 Figwheel: focusing on build-ids (app)
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.183 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/goog/deps.js
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
-notifying browser that file changed:  /trotte/dev.js
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/dev.js
+notifying browser that file changed:  /trottoirs/core.js
 sending changed CSS file: resources/public/css/site.css
 sending changed CSS file: resources/public/css/site.css
 sending changed CSS file: resources/public/css/site.css
@@ -583,51 +583,51 @@ sending changed CSS file: resources/public/css/site.css
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.325 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.138 seconds.[0m
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.138 seconds.[0m
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.132 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.134 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 sending changed CSS file: resources/public/css/site.css
 sending changed CSS file: resources/public/css/site.css
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.123 seconds.[0m
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.124 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.124 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 Figwheel: focusing on build-ids (app)
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.131 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/goog/deps.js
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
-notifying browser that file changed:  /trotte/dev.js
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/dev.js
+notifying browser that file changed:  /trottoirs/core.js
 Figwheel: focusing on build-ids (app)
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.135 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/goog/deps.js
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
-notifying browser that file changed:  /trotte/dev.js
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/dev.js
+notifying browser that file changed:  /trottoirs/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [31mCompiling "resources/public/js/app.js" failed.[0m
-[31mclojure.lang.ExceptionInfo: [39m[31mfailed compiling file:src/cljs/trotte/core.cljs[39m
+[31mclojure.lang.ExceptionInfo: [39m[31mfailed compiling file:src/cljs/trottoirs/core.cljs[39m
 [35m                 core.clj:4403 clojure.core/ex-info[39m
 [32m             compiler.clj:1122 cljs.compiler/compile-file[fn][39m
 [32m             compiler.clj:1090 cljs.compiler/compile-file[39m
@@ -677,7 +677,7 @@ notifying browser that file changed:  /trotte/core.js
 [34m  ThreadPoolExecutor.java:1142 java.util.concurrent.ThreadPoolExecutor.runWorker[39m
 [34m   ThreadPoolExecutor.java:617 java.util.concurrent.ThreadPoolExecutor$Worker.run[39m
 [34m               Thread.java:745 java.lang.Thread.run[39m
-[31mCaused by: [39m[31mclojure.lang.ExceptionInfo: [39m[31mNo such namespace: com.mongodb.ServerAddress, could not locate com/mongodb/ServerAddress.cljs at line 2 src/cljs/trotte/core.cljs[39m
+[31mCaused by: [39m[31mclojure.lang.ExceptionInfo: [39m[31mNo such namespace: com.mongodb.ServerAddress, could not locate com/mongodb/ServerAddress.cljs at line 2 src/cljs/trottoirs/core.cljs[39m
 [35m                 core.clj:4403 clojure.core/ex-info[39m
 [32m              analyzer.clj:379 cljs.analyzer/error[39m
 [32m              analyzer.clj:376 cljs.analyzer/error[39m
@@ -694,53 +694,53 @@ notifying browser that file changed:  /trotte/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.273 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 Figwheel: focusing on build-ids (app)
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.135 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/goog/deps.js
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
-notifying browser that file changed:  /trotte/dev.js
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/dev.js
+notifying browser that file changed:  /trottoirs/core.js
 Figwheel: focusing on build-ids (app)
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.134 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/goog/deps.js
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
-notifying browser that file changed:  /trotte/dev.js
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/dev.js
+notifying browser that file changed:  /trottoirs/core.js
 Figwheel: focusing on build-ids (app)
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.149 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/goog/deps.js
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
-notifying browser that file changed:  /trotte/dev.js
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/dev.js
+notifying browser that file changed:  /trottoirs/core.js
 Figwheel: focusing on build-ids (app)
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.149 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/goog/deps.js
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
-notifying browser that file changed:  /trotte/dev.js
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/dev.js
+notifying browser that file changed:  /trottoirs/core.js
 Figwheel: focusing on build-ids (app)
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.206 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/goog/deps.js
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
-notifying browser that file changed:  /trotte/dev.js
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/dev.js
+notifying browser that file changed:  /trottoirs/core.js
 Figwheel: focusing on build-ids (app)
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.121 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/goog/deps.js
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
-notifying browser that file changed:  /trotte/dev.js
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/dev.js
+notifying browser that file changed:  /trottoirs/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
-WARNING: Use of undeclared Var trotte.core/response at line 16 src/cljs/trotte/core.cljs
+WARNING: Use of undeclared Var trottoirs.core/response at line 16 src/cljs/trottoirs/core.cljs
 [31mCompiling "resources/public/js/app.js" failed.[0m
-[31mclojure.lang.ExceptionInfo: [39m[31mfailed compiling file:src/cljs/trotte/core.cljs[39m
+[31mclojure.lang.ExceptionInfo: [39m[31mfailed compiling file:src/cljs/trottoirs/core.cljs[39m
 [35m               core.clj:4403 clojure.core/ex-info[39m
 [32m           compiler.clj:1122 cljs.compiler/compile-file[fn][39m
 [32m           compiler.clj:1090 cljs.compiler/compile-file[39m
@@ -813,9 +813,9 @@ WARNING: Use of undeclared Var trotte.core/response at line 16 src/cljs/trotte/c
 [32m            compiler.clj:970 cljs.compiler/compile-file*[39m
 [32m           compiler.clj:1107 cljs.compiler/compile-file[fn][39m
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
-WARNING: Use of undeclared Var trotte.core/response at line 16 src/cljs/trotte/core.cljs
+WARNING: Use of undeclared Var trottoirs.core/response at line 16 src/cljs/trottoirs/core.cljs
 [31mCompiling "resources/public/js/app.js" failed.[0m
-[31mclojure.lang.ExceptionInfo: [39m[31mfailed compiling file:src/cljs/trotte/core.cljs[39m
+[31mclojure.lang.ExceptionInfo: [39m[31mfailed compiling file:src/cljs/trottoirs/core.cljs[39m
 [35m               core.clj:4403 clojure.core/ex-info[39m
 [32m           compiler.clj:1122 cljs.compiler/compile-file[fn][39m
 [32m           compiler.clj:1090 cljs.compiler/compile-file[39m
@@ -889,7 +889,7 @@ WARNING: Use of undeclared Var trotte.core/response at line 16 src/cljs/trotte/c
 [32m           compiler.clj:1107 cljs.compiler/compile-file[fn][39m
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [31mCompiling "resources/public/js/app.js" failed.[0m
-[31mclojure.lang.ExceptionInfo: [39m[31mfailed compiling file:src/cljs/trotte/core.cljs[39m
+[31mclojure.lang.ExceptionInfo: [39m[31mfailed compiling file:src/cljs/trottoirs/core.cljs[39m
 [35m               core.clj:4403 clojure.core/ex-info[39m
 [32m           compiler.clj:1122 cljs.compiler/compile-file[fn][39m
 [32m           compiler.clj:1090 cljs.compiler/compile-file[39m
@@ -963,35 +963,35 @@ WARNING: Use of undeclared Var trotte.core/response at line 16 src/cljs/trotte/c
 [32m           compiler.clj:1107 cljs.compiler/compile-file[fn][39m
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.147 seconds.[0m
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.158 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.17 seconds.[0m
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.141 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.149 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.142 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.138 seconds.[0m
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.143 seconds.[0m
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [31mCompiling "resources/public/js/app.js" failed.[0m
-[31mclojure.lang.ExceptionInfo: [39m[31mfailed compiling file:src/cljs/trotte/core.cljs[39m
+[31mclojure.lang.ExceptionInfo: [39m[31mfailed compiling file:src/cljs/trottoirs/core.cljs[39m
 [35m               core.clj:4403 clojure.core/ex-info[39m
 [32m           compiler.clj:1122 cljs.compiler/compile-file[fn][39m
 [32m           compiler.clj:1090 cljs.compiler/compile-file[39m
@@ -1068,7 +1068,7 @@ notifying browser that file changed:  /trotte/core.js
 [32m           compiler.clj:1107 cljs.compiler/compile-file[fn][39m
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [31mCompiling "resources/public/js/app.js" failed.[0m
-[31mclojure.lang.ExceptionInfo: [39m[31mfailed compiling file:src/cljs/trotte/core.cljs[39m
+[31mclojure.lang.ExceptionInfo: [39m[31mfailed compiling file:src/cljs/trottoirs/core.cljs[39m
 [35m               core.clj:4403 clojure.core/ex-info[39m
 [32m           compiler.clj:1122 cljs.compiler/compile-file[fn][39m
 [32m           compiler.clj:1090 cljs.compiler/compile-file[39m
@@ -1145,125 +1145,125 @@ notifying browser that file changed:  /trotte/core.js
 [32m           compiler.clj:1107 cljs.compiler/compile-file[fn][39m
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.135 seconds.[0m
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.139 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.148 seconds.[0m
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.137 seconds.[0m
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 Figwheel: focusing on build-ids (app)
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.178 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/goog/deps.js
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
-notifying browser that file changed:  /trotte/dev.js
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/dev.js
+notifying browser that file changed:  /trottoirs/core.js
 Figwheel: focusing on build-ids (app)
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.129 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/goog/deps.js
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
-notifying browser that file changed:  /trotte/dev.js
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/dev.js
+notifying browser that file changed:  /trottoirs/core.js
 Figwheel: focusing on build-ids (app)
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.139 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/goog/deps.js
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
-notifying browser that file changed:  /trotte/dev.js
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/dev.js
+notifying browser that file changed:  /trottoirs/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.203 seconds.[0m
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.19 seconds.[0m
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.15 seconds.[0m
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.147 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 Figwheel: focusing on build-ids (app)
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.148 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/goog/deps.js
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
-notifying browser that file changed:  /trotte/dev.js
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/dev.js
+notifying browser that file changed:  /trottoirs/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.16 seconds.[0m
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.154 seconds.[0m
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.155 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 Figwheel: focusing on build-ids (app)
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.138 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/goog/deps.js
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
-notifying browser that file changed:  /trotte/dev.js
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/dev.js
+notifying browser that file changed:  /trottoirs/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.201 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.192 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.191 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.149 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.153 seconds.[0m
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.153 seconds.[0m
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.139 seconds.[0m
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.141 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.209 seconds.[0m
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.143 seconds.[0m
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.146 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.135 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.137 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [31mCompiling "resources/public/js/app.js" failed.[0m
-[31mclojure.lang.ExceptionInfo: [39m[31mfailed compiling file:src/cljs/trotte/core.cljs[39m
+[31mclojure.lang.ExceptionInfo: [39m[31mfailed compiling file:src/cljs/trottoirs/core.cljs[39m
 [35m               core.clj:4403 clojure.core/ex-info[39m
 [32m           compiler.clj:1122 cljs.compiler/compile-file[fn][39m
 [32m           compiler.clj:1090 cljs.compiler/compile-file[39m
@@ -1348,40 +1348,87 @@ notifying browser that file changed:  /trotte/core.js
 [32m           compiler.clj:1107 cljs.compiler/compile-file[fn][39m
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.14 seconds.[0m
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.138 seconds.[0m
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.147 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.146 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.156 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/core.js
 Figwheel: focusing on build-ids (app)
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.246 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/goog/deps.js
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
-notifying browser that file changed:  /trotte/core.js
-notifying browser that file changed:  /trotte/dev.js
+notifying browser that file changed:  /trottoirs/core.js
+notifying browser that file changed:  /trottoirs/dev.js
 Figwheel: focusing on build-ids (app)
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.4 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/goog/deps.js
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
-notifying browser that file changed:  /trotte/dev.js
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/dev.js
+notifying browser that file changed:  /trottoirs/core.js
 Figwheel: focusing on build-ids (app)
 [0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
 [32mSuccessfully compiled "resources/public/js/app.js" in 0.215 seconds.[0m
 notifying browser that file changed:  resources/public/js/out/goog/deps.js
 notifying browser that file changed:  resources/public/js/out/cljs_deps.js
-notifying browser that file changed:  /trotte/dev.js
-notifying browser that file changed:  /trotte/core.js
+notifying browser that file changed:  /trottoirs/dev.js
+notifying browser that file changed:  /trottoirs/core.js
+Figwheel: focusing on build-ids (app)
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.296 seconds.[0m
+notifying browser that file changed:  resources/public/js/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  /trottoirs/core.js
+notifying browser that file changed:  /trottoirs/dev.js
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.787 seconds.[0m
+notifying browser that file changed:  /trottoirs/core.js
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.251 seconds.[0m
+notifying browser that file changed:  /trottoirs/core.js
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.698 seconds.[0m
+notifying browser that file changed:  /trottoirs/core.js
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.458 seconds.[0m
+notifying browser that file changed:  /trottoirs/core.js
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.238 seconds.[0m
+notifying browser that file changed:  /trottoirs/core.js
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.271 seconds.[0m
+notifying browser that file changed:  /trottoirs/core.js
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.219 seconds.[0m
+notifying browser that file changed:  /trottoirs/core.js
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.228 seconds.[0m
+notifying browser that file changed:  /trottoirs/core.js
+Figwheel: focusing on build-ids (app)
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.237 seconds.[0m
+notifying browser that file changed:  resources/public/js/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/out/cljs_deps.js
+notifying browser that file changed:  /trottoirs/core.js
+notifying browser that file changed:  /trottoirs/dev.js
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.77 seconds.[0m
+notifying browser that file changed:  /trottoirs/core.js
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.248 seconds.[0m
+notifying browser that file changed:  /trottoirs/core.js
+[0mCompiling "resources/public/js/app.js" from ["src/cljs" "env/dev/cljs"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.243 seconds.[0m
+notifying browser that file changed:  /trottoirs/core.js

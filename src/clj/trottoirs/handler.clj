@@ -14,7 +14,7 @@
 ;; ROUTES
 (defroutes routes
   (GET "/" [] (render-file "templates/index.html" {:dev (env :dev?)}))
-  (GET "/sample" [] (draw-perps)) ;;
+  (GET "/sample/:lat/:lng/:rad" [lat lng rad] (draw-perps lat lng rad)) ;;
   (resources "/")
   (not-found "Not Found"))
 

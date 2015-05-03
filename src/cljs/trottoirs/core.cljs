@@ -1,4 +1,4 @@
-(ns trotte.core
+(ns trottoirs.core
     (:require [reagent.core :as reagent :refer [atom]]
               [reagent.session :as session]
               [secretary.core :as secretary :include-macros true]
@@ -15,8 +15,8 @@
 ;; Views
 
 
-(defn home-did-mount []
-  (let [map (.setView (.map js/L "map") #js [48.871055 2.344964] 18)
+(defn home-did-mount [[lat lng] radius]
+  (let [map (.setView (.map js/L "map") #js [lat lng] 18)
         token "sk.eyJ1IjoibGFlbSIsImEiOiIxOURTMEtvIn0._LB5HO5XkDMWbWU4eu8RZg"
         r (t/reader :json)
         getHandler (fn [response] (.addTo (.geoJson js/L
@@ -28,21 +28,21 @@
                         (clj->js {:attribution "Thks, mapbox"
                                   :maxZoom 19}))
             map)
-      (GET "/sample" {:handler getHandler}))))
+      (GET (str "/sample/" lat "/" lng "/" radius ) {:handler getHandler}))))
 
 
 (defn home-render []
-  [:div [:h2 "Welcome to my trotte"]
+  [:div [:h2 "Welcome to my trottoirs"]
     [:div#map ]
     [:div [:a {:href "#/about"} "go to about page"]]])
 
-(defn home []
+(defn home [epicenter radius]
   (reagent/create-class {:reagent-render home-render
-                         :component-did-mount home-did-mount}))
+                         :component-did-mount (partial home-did-mount epicenter radius)}))
 
 
 (defn about-page []
-  [:div [:h2 "About trotte"]
+  [:div [:h2 "About trottoirs"]
    [:div [:a {:href "#/"} "go to the home page"]]])
 
 (defn current-page []
@@ -52,8 +52,8 @@
 ;; Routes
 (secretary/set-config! :prefix "#")
 
-(secretary/defroute "/" []
-  (session/put! :current-page #'home))
+(secretary/defroute "/t/:lat/:lng/:rad" {:as params}
+  (session/put! :current-page (#'home [(:lat params) (:lng params)] (:rad params))))
 
 (secretary/defroute "/about" []
   (session/put! :current-page #'about-page))

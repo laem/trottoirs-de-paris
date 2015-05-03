@@ -1,1 +1,1 @@
-web: java $JVM_OPTS -cp target/trotte.jar clojure.main -m trotte.server
+web: java $JVM_OPTS -cp target/trottoirs.jar clojure.main -m trottoirs.server

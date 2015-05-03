@@ -1,5 +1,5 @@
-(ns ^:figwheel-no-load trotte.dev
-  (:require [trotte.core :as core]
+(ns ^:figwheel-no-load trottoirs.dev
+  (:require [trottoirs.core :as core]
             [figwheel.client :as figwheel :include-macros true]
             [weasel.repl :as weasel]
             [reagent.core :as r]))

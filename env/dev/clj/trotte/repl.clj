@@ -1,6 +1,6 @@
-(ns trotte.repl
-  (:use trotte.handler
-        trotte.dev
+(ns trottoirs.repl
+  (:use trottoirs.handler
+        trottoirs.dev
         ring.server.standalone
         [ring.middleware file-info file]))
 

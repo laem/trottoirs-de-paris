@@ -86,28 +86,38 @@
                             :spherical true
                             :maxDistance radius
                             :distanceField "calculated_distance"
-                            :query {:_id {"$ne" id }
-                                    :geometry { "$geoIntersects" { "$geometry" (:geometry (geo-feature "LineString" perp nil)) } }}
+                            :query { :geometry { "$geoIntersects" { "$geometry" (:geometry (geo-feature "LineString" perp nil)) } }}
                             }}]))
-         [v-results t-results] (map q ["v" "t"])
-         bordures (filter (fn [t] (= "BOR" (get-in t [:properties :info]))) t-results)]
+         [v-results t-results] (map q ["v" "t"]) ;; buildings (v) and trottoirs (t) collections
+         ;; a polygon segment will intersect the polygon itself, remove this result
+         yop (println v-results)
+         yop (println (str id ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"))
+         buildings (remove (fn [v] (= (:calculated_distance v) 0.0 )) v-results)
+         buildings v-results
+         bordures (filter (fn [t] (= "BOR" (get-in t [:properties :info]))) t-results)] ;; ignore all types of trottoirs expect BORdures
     (apply min-key
            #(if (nil? %) 10000 ;; this because I don't know how to code
              (:calculated_distance %))
-           (map first [v-results bordures]))
+           (map first [buildings bordures]))
     ))
 
 
 ;;; Main function ;;;;;;;;;;;
-(defn draw-perps []
-  (let [nearQuery { :geometry { $near
+(defn draw-perps [lat lng rad]
+  (let [;; trottoirs will be computed around this central point with a given diameter
+        nearQuery { :geometry { $near
                              { "$geometry" {
                                 :type "Point"
-                                ;:coordinates [2.3449641466140747 48.87105583726818] ; Grands boulevards
-                                :coordinates [2.378979921340942 48.84630097640122] ; Diderot
-                                }
-                               "$maxDistance" 20} } }
-        ;; get some bati geojson
+                                ;; Grands boulevards
+                                ;:coordinates [2.3449641466140747 48.87105583726818] 
+                                ;; Diderot
+                                ;; :coordinates [2.378979921340942 48.84630097640122] }
+                                ;; Adele
+                                :coordinates [(read-string lng) (read-string lat)]}
+                               "$maxDistance" (read-string rad) ;; diameter
+                               } } }
+        nothing (println nearQuery )
+        ;; perform the query, will return building shapes
         results (mc/find-maps db "v" nearQuery)
         ;; get their coordinates
         polygons (map (fn [{id :_id {coordinates :coordinates} :geometry}] {:coords coordinates :id id}) results)
@@ -121,7 +131,7 @@
                        polygons)
         ;; remove shared (duplicate) segments, since they can't be near a trottoir
         lonely-segments (dump-dups all-segments)
-        ;; remove short segments, they usually are corners of bati. This is a problem with round structures TODO
+        ;; remove short segments, they usually are corners of bati. This is a problem with round or complex structures TODO
         filtered-segments (filter (fn [seg] (> (segment-length (:coords seg)) 5)) lonely-segments)
         ;; compute [origin-segment corresponding-perpendicular-segment]
         perps (map (fn [seg] [seg (compute-perp (:coords seg) 20)]) filtered-segments)

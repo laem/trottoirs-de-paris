@@ -1,5 +1,5 @@
-(ns trotte.server
-  (:require [trotte.handler :refer [app]]
+(ns trottoirs.server
+  (:require [trottoirs.handler :refer [app]]
             [ring.adapter.jetty :refer [run-jetty]])
   (:gen-class))
 

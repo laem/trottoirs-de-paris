@@ -1,4 +1,4 @@
-(ns trotte.mercator)
+(ns trottoirs.mercator)
 ;; taken from https://github.com/dmitriiabramov/clojure-mercator-projection
 
 (def PI (. Math PI))

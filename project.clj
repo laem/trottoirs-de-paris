@@ -1,4 +1,4 @@
-(defproject trotte "0.1.0-SNAPSHOT"
+(defproject trottoirs "0.1.0-SNAPSHOT"
   :description "FIXME: write description"
   :url "http://example.com/FIXME"
   :license {:name "Eclipse Public License"
@@ -31,14 +31,14 @@
             [lein-ring "0.9.1"]
             [lein-asset-minifier "0.2.2"]]
 
-  :ring {:handler trotte.handler/app
-         :uberwar-name "trotte.war"}
+  :ring {:handler trottoirs.handler/app
+         :uberwar-name "trottoirs.war"}
 
   :min-lein-version "2.5.0"
 
-  :uberjar-name "trotte.jar"
+  :uberjar-name "trottoirs.jar"
 
-  :main trotte.server
+  :main trottoirs.server
 
   :clean-targets ^{:protect false} ["resources/public/js"]
 
@@ -53,7 +53,7 @@
                                         :optimizations :none
                                         :pretty-print  true}}}}
 
-  :profiles {:dev {:repl-options {:init-ns trotte.repl
+  :profiles {:dev {:repl-options {:init-ns trottoirs.repl
                                   :nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]}
 
                    :dependencies [[ring-mock "0.1.5"]
@@ -73,12 +73,12 @@
                    :figwheel {:http-server-root "public"
                               :server-port 3449
                               :css-dirs ["resources/public/css"]
-                              :ring-handler trotte.handler/app}
+                              :ring-handler trottoirs.handler/app}
 
                    :env {:dev? true}
 
                    :cljsbuild {:builds {:app {:source-paths ["env/dev/cljs"]
-                                              :compiler {   :main "trotte.dev"
+                                              :compiler {   :main "trottoirs.dev"
                                                          :source-map true}}
 }
 }}

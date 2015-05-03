@@ -1,18 +1,13 @@
-(ns trotte.handler
-  (:require [compojure.core :refer [GET defroutes]]
-            [compojure.route :refer [not-found resources]]
-            [ring.middleware.defaults :refer [site-defaults wrap-defaults]]
+(ns trottoirs.engine
+ (:require  [monger.core :as mg]
             [clojure.data.json :as json]
-            [selmer.parser :refer [render-file]]
-            [prone.middleware :refer [wrap-exceptions]]
-            [environ.core :refer [env]]
-            [monger.core :as mg]
             [monger.collection :as mc]
             [monger.operators :refer :all]
             [monger.conversion :refer [from-db-object]]
-            [trotte.mercator :refer [mercator inverted-mercator segment-length to-mercator-distance]])
-  (:import [com.mongodb MongoOptions ServerAddress]
-    org.bson.types.ObjectId))
+            [trottoirs.mercator :refer [mercator inverted-mercator segment-length to-mercator-distance]] 
+
+   ))
+
 
 ;;; DB ;;;;;;;;;;;
 (def db (mg/get-db (mg/connect) "agreable"))
@@ -20,7 +15,6 @@
   (if (= key :_id)
     (str value)
     value))
-
 
 
 ;;; Utils ;;;;;;;;;;;
@@ -105,14 +99,14 @@
 
 
 ;;; Main function ;;;;;;;;;;;
-(defn drawPerps []
+(defn draw-perps []
   (let [nearQuery { :geometry { $near
                              { "$geometry" {
                                 :type "Point"
                                 ;:coordinates [2.3449641466140747 48.87105583726818] ; Grands boulevards
-                                :coordinates [2.378979921340942 48.84630097640122] ; diderot
+                                :coordinates [2.378979921340942 48.84630097640122] ; Diderot
                                 }
-                               "$maxDistance" 200} } }
+                               "$maxDistance" 20} } }
         ;; get some bati geojson
         results (mc/find-maps db "v" nearQuery)
         ;; get their coordinates
@@ -154,16 +148,3 @@
          "}")
     ))
 
-
-
-;; ROUTES
-(defroutes routes
-  (GET "/" [] (render-file "templates/index.html" {:dev (env :dev?)}))
-  (GET "/sample" [] (drawPerps)) ;;
-  (resources "/")
-  (not-found "Not Found"))
-
-;;APP
-(def app
-  (let [handler (wrap-defaults routes site-defaults)]
-    (if (env :dev?) (wrap-exceptions handler) handler)))

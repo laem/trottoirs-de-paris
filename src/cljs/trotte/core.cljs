@@ -15,7 +15,6 @@
 ;; Views
 
 
-
 (defn home-did-mount []
   (let [map (.setView (.map js/L "map") #js [48.871055 2.344964] 18)
         token "sk.eyJ1IjoibGFlbSIsImEiOiIxOURTMEtvIn0._LB5HO5XkDMWbWU4eu8RZg"

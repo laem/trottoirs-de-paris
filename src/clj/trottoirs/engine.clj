@@ -19,25 +19,26 @@
 
 ;;; Utils ;;;;;;;;;;;
 
-(defn compute-perp [segment d]
+(defn compute-perp [segment distance]
   "Compute the middle-perpendicular of length d of a long-lat segment"
-;;We use the mercator projection to work on shapes with cartesian coordinates.
-;;Another approach is to convert the coordinates to the cartesian earth system,
+;; We use the mercator projection to work on shapes with cartesian coordinates.
+;; Another approach is to convert the coordinates to the cartesian earth system,
 ;;  then rotate it until the z axis crosses Paris.
 ;;  Use vectorz-clj and http://stackoverflow.com/a/1185413 with a conversion matrix
   (let [[A B] segment
         [ax ay] (mercator A)
         [bx by] (mercator B)
         [mx my :as M] [(/ (+ ax bx) 2) (/ (+ ay by) 2)]
-        mercator-d (to-mercator-distance (second A) d)
-        k (/ mercator-d (Math/sqrt
-                  (+
-                   (Math/pow (- bx ax) 2)
-                   (Math/pow (- by ay) 2))))
-        px (+ (* k (- ay by)) mx)
-        py (+ (* k (- bx ax)) my)
-        m (inverted-mercator [mx my])
-        p (inverted-mercator [px py])]
+        point-on-perp (fn [d] (let [mercator-d (to-mercator-distance (second A) d)
+                                    k (/ mercator-d (Math/sqrt
+                                              (+
+                                               (Math/pow (- bx ax) 2)
+                                               (Math/pow (- by ay) 2))))
+                                    px (+ (* k (- ay by)) mx)
+                                    py (+ (* k (- bx ax)) my)]
+                               [px py]))
+        m (inverted-mercator (point-on-perp 0.1)) ; a litte shift to avoid a perpendicular to overlap its origin segment
+        p (inverted-mercator (point-on-perp distance))]
 
     [m p]))
 
@@ -89,9 +90,10 @@
                             :query { :geometry { "$geoIntersects" { "$geometry" (:geometry (geo-feature "LineString" perp nil)) } }}
                             }}]))
          [v-results t-results] (map q ["v" "t"]) ;; buildings (v) and trottoirs (t) collections
-         yop (do (println (str id ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")) (println v-results))
+         ;;yop (do (println (str id ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")) (println v-results))
          ;; a polygon segment can intersect the polygon itself (because of decimal shifts probably), remove this result
          buildings (remove (fn [v] (and (= (:_id v) id) (< (:calculated_distance v) 0.5 ))) v-results)
+         buildings v-results
          ;; ignore all types of trottoirs expect BORdures
          bordures (filter (fn [t] (= "BOR" (get-in t [:properties :info]))) t-results)] 
     (apply min-key
@@ -126,11 +128,11 @@
                          (mapcat
                            (fn [ring]
                              (map #(assoc {:_id id} :coords %) (partition 2 1 ring)))
-                           [(first coords)]))
+                           [(first coords)])) ;; don't take internal rings into account, if they happen to exist
                        polygons)
         ;; remove shared (duplicate) segments, since they can't be near a trottoir
         lonely-segments (dump-dups all-segments)
-        ;; remove short segments, they usually are corners of bati. This is a problem with round or complex structures TODO
+        ;; remove short segments, they usually are corners of buildings. This is a problem with round or complex structures TODO
         filtered-segments (filter (fn [seg] (> (segment-length (:coords seg)) 5)) lonely-segments)
         ;; compute [origin-segment corresponding-perpendicular-segment]
         perps (map (fn [seg] [seg (compute-perp (:coords seg) 20)]) filtered-segments)

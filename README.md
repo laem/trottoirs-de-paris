@@ -1,3 +1,16 @@
+Maps are made for cars. Are they still relevant in Paris, where pedestrians ??
+This is what a street in Paris looks like on maps : 
+
+[image]
+
+The road isn't so tiny, nor does it span the whole street width. 
+What's missing here is the pavement width. 
+
+
+
+
+
+
 Import the array of features json with
 
 http://parisdata.opendatasoft.com/explore/dataset/trottoirs_des_rues_de_paris/?tab=map&dataChart=eyJxdWVyaWVzIjpbeyJjb25maWciOnsiZGF0YXNldCI6InRyb3R0b2lyc19kZXNfcnVlc19kZV9wYXJpcyIsIm9wdGlvbnMiOnsidGFiIjoiYW5hbHl6ZSJ9fSwiY2hhcnRzIjpbeyJ0eXBlIjoiY29sdW1uIiwiZnVuYyI6IkNPVU5UIiwiY29sb3IiOiIjNjZjMmE1In1dLCJ4QXhpcyI6ImxpYmVsbGUiLCJtYXhwb2ludHMiOm51bGwsInNvcnQiOiIifV19&location=19,48.84582,2.37975

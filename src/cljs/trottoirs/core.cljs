@@ -24,15 +24,15 @@
                                                     (clj->js {:style {:fillOpacity .25 :color "green" :weight 0}}))
                                           map))]
     (do
-      (.addTo (.tileLayer js/L (str "http://{s}.tiles.mapbox.com/v4/laem.lihjhd1m/{z}/{x}/{y}.png?access_token=" token)
+      (comment (.addTo (.tileLayer js/L (str "http://{s}.tiles.mapbox.com/v4/laem.lihjhd1m/{z}/{x}/{y}.png?access_token=" token)
                         (clj->js {:attribution "Thks, mapbox"
                                   :maxZoom 19}))
-            map)
+            map))
       (GET (str "/sample/" lat "/" lng "/" radius ) {:handler getHandler}))))
 
 
 (defn home-render []
-  [:div [:h2 "Welcome to my trottoirs"]
+  [:div [:h2 "Bienvenue"]
     [:div#map ]
     [:div [:a {:href "#/about"} "go to about page"]]])
 

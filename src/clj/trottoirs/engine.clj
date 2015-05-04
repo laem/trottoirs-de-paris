@@ -89,12 +89,11 @@
                             :query { :geometry { "$geoIntersects" { "$geometry" (:geometry (geo-feature "LineString" perp nil)) } }}
                             }}]))
          [v-results t-results] (map q ["v" "t"]) ;; buildings (v) and trottoirs (t) collections
-         ;; a polygon segment will intersect the polygon itself, remove this result
-         yop (println v-results)
-         yop (println (str id ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"))
-         buildings (remove (fn [v] (= (:calculated_distance v) 0.0 )) v-results)
-         buildings v-results
-         bordures (filter (fn [t] (= "BOR" (get-in t [:properties :info]))) t-results)] ;; ignore all types of trottoirs expect BORdures
+         yop (do (println (str id ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")) (println v-results))
+         ;; a polygon segment can intersect the polygon itself (because of decimal shifts probably), remove this result
+         buildings (remove (fn [v] (and (= (:_id v) id) (< (:calculated_distance v) 0.5 ))) v-results)
+         ;; ignore all types of trottoirs expect BORdures
+         bordures (filter (fn [t] (= "BOR" (get-in t [:properties :info]))) t-results)] 
     (apply min-key
            #(if (nil? %) 10000 ;; this because I don't know how to code
              (:calculated_distance %))
@@ -109,9 +108,9 @@
                              { "$geometry" {
                                 :type "Point"
                                 ;; Grands boulevards
-                                ;:coordinates [2.3449641466140747 48.87105583726818] 
+                                ;;:coordinates [2.3449641466140747 48.87105583726818] 
                                 ;; Diderot
-                                ;; :coordinates [2.378979921340942 48.84630097640122] }
+                                ;;:coordinates [2.378979921340942 48.84630097640122] }
                                 ;; Adele
                                 :coordinates [(read-string lng) (read-string lat)]}
                                "$maxDistance" (read-string rad) ;; diameter
@@ -127,7 +126,7 @@
                          (mapcat
                            (fn [ring]
                              (map #(assoc {:_id id} :coords %) (partition 2 1 ring)))
-                           coords))
+                           [(first coords)]))
                        polygons)
         ;; remove shared (duplicate) segments, since they can't be near a trottoir
         lonely-segments (dump-dups all-segments)

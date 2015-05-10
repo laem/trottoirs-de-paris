@@ -24,11 +24,10 @@ sudo apt-get install -y mongodb-org
 
 
 
-[Download](http://parisdata.opendatasoft.com/explore/dataset/trottoirs_des_rues_de_paris/download/?format=geojson&timezone=Europe/Berlin) the 'trottoirs' (pavements) geojson features
-
-Transform the downloaded file for the import :
+Download the 'trottoirs' (pavements) geojson features, and transform it for import. 
 
 ```
+curl 'http://parisdata.opendatasoft.com/explore/dataset/trottoirs_des_rues_de_paris/download/?format=geojson&timezone=Europe/Berlin' > trottoirs_des_rues_de_paris.geojson
 sed 's/{"type":"FeatureCollection","features"://g' trottoirs_des_rues_de_paris.geojson > tmpjson
 sed '$s/.$//' tmpjson > mongoimport.json
 ```
@@ -42,11 +41,21 @@ mongoimport --db agreable --collection t --file d.ok.json --jsonArray
 
 
 We should repeat the operation for the 'Volumes Batis' (buildings) [file](http://parisdata.opendatasoft.com/explore/dataset/volumesbatisparis2011/download/?format=geojson&timezone=Europe/Berlin). **Unfortunately**, some of them can't be indexed by mongoDB (malformed geojson polygons).
-[Here](LINK) is an export of the buildings filtered (~50 of them are missing).
+Download and import instead an export of the buildings filtered (~50 of them are missing).
 
 ```
+curl https://copy.com/MaFNvfd7SoLTNEHn?download=1 > v-correct.tar.bz2
 tar -jxvf v-correct.tar.bz2
-mongoimport --db agreable --collection v --file v-correct.json --jsonArray
+mongoimport --db agreable --collection v --file v-correct.json 
+```
+
+Finally, create an index for each collection :
+
+```
+mongo #enters mongo shell
+use agreable
+db.v.createIndex( { geometry : "2dsphere" } )
+db.t.createIndex( { geometry : "2dsphere" } )
 ```
 
 
@@ -54,6 +63,7 @@ mongoimport --db agreable --collection v --file v-correct.json --jsonArray
 
 
 [Archive] failed attempt with topojson :
+
 ```
 topojson -o t.topo.json trottoirs_des_rues_de_paris.geojson -q 1e6
 # Change the topojson translation property, then back to geojson

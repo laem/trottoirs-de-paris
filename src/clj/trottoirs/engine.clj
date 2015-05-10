@@ -106,18 +106,20 @@
 ;;; Main function ;;;;;;;;;;;
 (defn draw-perps [lat lng rad]
   (let [;; trottoirs will be computed around this central point with a given diameter
-        nearQuery { :geometry { $near
+        nearQuery (if (every? some? [lat lng rad]) 
+                    { :geometry 
+                      { $near
                              { "$geometry" {
                                 :type "Point"
                                 ;; Grands boulevards
                                 ;;:coordinates [2.3449641466140747 48.87105583726818] 
                                 ;; Diderot
-                                ;;:coordinates [2.378979921340942 48.84630097640122] }
+                                ;;:coordinates [2.378979921340942 48.84630097640122] 
                                 ;; Adele
                                 :coordinates [(read-string lng) (read-string lat)]}
                                "$maxDistance" (read-string rad) ;; diameter
-                               } } }
-        nothing (println nearQuery )
+                               } } } 
+                    nil)
         ;; perform the query, will return building shapes
         results (mc/find-maps db "v" nearQuery)
         ;; get their coordinates
@@ -154,8 +156,12 @@
     ;;(json/write-str (map (comp geo-feature second) perps) :value-fn objectId-reader)
     ;;(json/write-str (remove nil? hits) :value-fn objectId-reader)
     ;;(json/write-str filtered-segments :value-fn objectId-reader)
-    (str "{ \"type\": \"FeatureCollection\",\"features\": "
+    (let [out (str "{ \"type\": \"FeatureCollection\",\"features\": "
          (json/write-str (map #(geo-feature "Polygon" (:coordinates %) (:properties %)) hits) :value-fn objectId-reader)
-         "}")
+         "}")]
+      (do (spit "./trottoirs.geojson" out) (println "Outpout written in ./trottoirs.geojson"))
+      out
+      )
+
     ))
 

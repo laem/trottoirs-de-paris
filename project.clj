@@ -92,4 +92,8 @@
                                              {:source-paths ["env/prod/cljs"]
                                               :compiler
                                               {:optimizations :advanced
-                                               :pretty-print false}}}}}})
+                                               :pretty-print false}}}}}
+             :cl {:main trottoirs.cl
+                  :dependencies [[org.clojure/tools.cli "0.3.1"]]
+                  }
+             })

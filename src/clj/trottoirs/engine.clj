@@ -104,7 +104,9 @@
 
 
 ;;; Main function ;;;;;;;;;;;
-(defn draw-perps [lat lng rad]
+(defn draw-perps 
+  ( [] (draw-perps nil nil nil)) ; that's ugly yeah
+  ( [lat lng rad]
   (let [;; trottoirs will be computed around this central point with a given diameter
         nearQuery (if (every? some? [lat lng rad]) 
                     { :geometry 
@@ -163,5 +165,5 @@
       out
       )
 
-    ))
+    )))
 

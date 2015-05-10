@@ -1,3 +1,5 @@
+# What ? 
+
 Maps are made for cars. Are they still relevant in Paris, where pedestrians ??
 This is what a street in Paris looks like on maps : 
 
@@ -6,38 +8,52 @@ This is what a street in Paris looks like on maps :
 The road isn't so tiny, nor does it span the whole street width. 
 What's missing here is the pavement width. 
 
+# How it works 
 
+# Running this project 
 
-
-
-
-Import the array of features json with
-
-http://parisdata.opendatasoft.com/explore/dataset/trottoirs_des_rues_de_paris/?tab=map&dataChart=eyJxdWVyaWVzIjpbeyJjb25maWciOnsiZGF0YXNldCI6InRyb3R0b2lyc19kZXNfcnVlc19kZV9wYXJpcyIsIm9wdGlvbnMiOnsidGFiIjoiYW5hbHl6ZSJ9fSwiY2hhcnRzIjpbeyJ0eXBlIjoiY29sdW1uIiwiZnVuYyI6IkNPVU5UIiwiY29sb3IiOiIjNjZjMmE1In1dLCJ4QXhpcyI6ImxpYmVsbGUiLCJtYXhwb2ludHMiOm51bGwsInNvcnQiOiIifV19&location=19,48.84582,2.37975
-
+Install mongodb 3 : http://docs.mongodb.org/manual/installation/
+For ubuntu :
 ```
-mongoimport --db agreable --collection t --file ARRAY_of_GEOJSON_FEATURES.json --jsonArray
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
+echo "deb http://repo.mongodb.org/apt/ubuntu "$(lsb_release -sc)"/mongodb-org/3.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.0.list
+sudo apt-get update
+sudo apt-get install -y mongodb-org
 ```
 
-To transform the downloaded file for the import :
+
+
+
+[Download](http://parisdata.opendatasoft.com/explore/dataset/trottoirs_des_rues_de_paris/download/?format=geojson&timezone=Europe/Berlin) the 'trottoirs' (pavements) geojson features
+
+Transform the downloaded file for the import :
 
 ```
 sed 's/{"type":"FeatureCollection","features"://g' trottoirs_des_rues_de_paris.geojson > tmpjson
 sed '$s/.$//' tmpjson > mongoimport.json
 ```
 
-BUT the Paris trottoirs geojson file has a weird offset.
+BUT the Paris trottoirs geojson file has a weird offset. Correct that :
 
 ```
 node d.js
 mongoimport --db agreable --collection t --file d.ok.json --jsonArray
 ```
 
-Then import the Bati file. TODO C
-Some of theme are wrong TODO C
+
+We should repeat the operation for the 'Volumes Batis' (buildings) [file](http://parisdata.opendatasoft.com/explore/dataset/volumesbatisparis2011/download/?format=geojson&timezone=Europe/Berlin). **Unfortunately**, some of them can't be indexed by mongoDB (malformed geojson polygons).
+[Here](LINK) is an export of the buildings filtered (~50 of them are missing).
+
+```
+tar -jxvf v-correct.tar.bz2
+mongoimport --db agreable --collection v --file v-correct.json --jsonArray
+```
 
 
-Failed attempt with topojson :
+
+
+
+[Archive] failed attempt with topojson :
 ```
 topojson -o t.topo.json trottoirs_des_rues_de_paris.geojson -q 1e6
 # Change the topojson translation property, then back to geojson

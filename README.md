@@ -1,7 +1,12 @@
 # What ? 
 
-Maps are made for cars. Are they still relevant in Paris, where pedestrians ??
-This is what a street in Paris looks like on maps : 
+Cities are designed for cars.  We even use maps drawn for cars. 
+In cities like Paris, they are, however a minor means of transportation : more than 60% of travel is by walk, and more than 25% by public transport.
+http://www.paris.fr/pratique/deplacements-voirie/dossier/bilan-des-deplacements-a-paris/le-bilan-des-deplacements-a-paris-en-2013/rub_7096_dossier_103374_port_16333_sheet_25892
+
+This is what a street in Paris looks like on maps :
+
+
 
 [image]
 

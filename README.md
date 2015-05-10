@@ -1,19 +1,18 @@
 # What ? 
 
 Cities are designed for cars.  We even use maps drawn for cars. 
-In cities like Paris, they are, however a minor means of transportation : more than 60% of travel is by walk, and more than 25% by public transport.
-http://www.paris.fr/pratique/deplacements-voirie/dossier/bilan-des-deplacements-a-paris/le-bilan-des-deplacements-a-paris-en-2013/rub_7096_dossier_103374_port_16333_sheet_25892
+In cities like Paris, they are, however a minor means of transportation : more than 25% of travel is by public transport, and *more than 60%  is by walk*.
 
-This is what a street in Paris looks like on maps :
+This is an early attempt to provide a *map for pedestrians*, that includes sidewalks, squares and parks.
+
+The technique used to draw sidewalks is original, but leads to another interesting map that shows *sidewalks coloured by width*. Find the very large ones where you can skate freely or the very narrow ones which might be a problem for some people or in peak times. 
 
 
-
-[image]
-
-The road isn't so tiny, nor does it span the whole street width. 
-What's missing here is the pavement width. 
+Source for figures : [bilan des déplacements à Paris](http://www.paris.fr/pratique/deplacements-voirie/dossier/bilan-des-deplacements-a-paris/le-bilan-des-deplacements-a-paris-en-2013/rub_7096_dossier_103374_port_16333_sheet_25892)
 
 # How it works 
+
+TODO
 
 # Running this project 
 
@@ -63,7 +62,7 @@ db.v.createIndex( { geometry : "2dsphere" } )
 db.t.createIndex( { geometry : "2dsphere" } )
 ```
 
-
+TODO lein 
 
 
 

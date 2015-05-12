@@ -1,0 +1,58 @@
+_prefs: 
+  baselayer: ''
+  mapid: trottoirs.9a57f77c
+  saveCenter: false
+_properties: 
+  bridge: 
+    "group-by": layer
+attribution: "<a href='https://www.mapbox.com/about/maps/' target='_blank'>&copy; Mapbox &copy; OpenStreetMap</a> <a class='mapbox-improve-map' href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a>"
+bounds: 
+  - -180
+  - -85.0511
+  - 180
+  - 85.0511
+center: 
+  - 2.3453
+  - 48.8543
+  - 15
+description: A map for running, biking, and hiking
+format: "png8:m=h:c=128"
+interactivity_layer: ''
+layers: 
+  - landcover
+  - landuse
+  - hillshade
+  - contour.line
+  - waterway
+  - water
+  - aeroway
+  - barrier_line
+  - building
+  - landuse_overlay
+  - tunnel
+  - road
+  - bridge
+  - admin
+  - trottoirs-centre
+  - country_label_line
+  - country_label
+  - marine_label
+  - state_label
+  - place_label
+  - water_label
+  - poi_label
+  - road_label
+  - waterway_label
+  - contour.label
+maxzoom: 22
+minzoom: 0
+name: Paris Trottoirs
+source: "mapbox:///mapbox.mapbox-terrain-v1,mapbox.mapbox-streets-v5,trottoirs.00596ac8"
+styles: 
+  - vars.mss
+  - bg.mss
+  - labels.mss
+  - roads.mss
+  - pois.mss
+  - trottoirs.mss
+template: ''

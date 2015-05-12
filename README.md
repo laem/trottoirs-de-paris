@@ -5,11 +5,13 @@ In cities like Paris, they are however a minor means of transportation : more th
 
 This project is an attempt to provide the width of the parisian sidewalks. The technique used to draw sidewalks does not produce beautiful nor complete shapes, but directly gives an estimation of their width, leading to this map of **sidewalks coloured by width**.
 
-[Sidewalk widths](https://octodex.github.com/images/yaktocat.png)
+[Sidewalk widths (fullscreen)](https://api.tiles.mapbox.com/v4/trottoirs.9a57f77c/page.html?access_token=pk.eyJ1IjoidHJvdHRvaXJzIiwiYSI6IjFqTHpzN2sifQ.lKYhcpJGt4Xof8s98pDixQ#17/48.85546/2.34989)
+![Sidewalk widths](trottoirs-paris.medium.png)
 
 This second map is an early draft providing a **map for pedestrians**, that includes sidewalks, squares and parks (and could show trees, water fountains...).
 Find the very large ones where you can skate freely or the very narrow ones which might be a problem for some people or during peak times.
 
+[Map for pedestrians (fullscreen)](https://api.tiles.mapbox.com/v4/laem.ca825d58/page.html?access_token=pk.eyJ1IjoibGFlbSIsImEiOiJ1Qjh4a1JNIn0.BGQeLm-XAzTgLF9t25VSKw#17/48.85275/2.34626)
 ![map for pedestrians](paris-piéton-latin.medium.png)
 
 

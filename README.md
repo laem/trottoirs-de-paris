@@ -29,7 +29,7 @@ Source for figures : [bilan des déplacements à Paris](http://www.paris.fr/prat
 
 TODO
 
-# Running this project
+# Computing sidewalk shapes
 
 Install mongodb 3 : http://docs.mongodb.org/manual/installation/
 For ubuntu :

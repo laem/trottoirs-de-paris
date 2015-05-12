@@ -34,6 +34,8 @@ We draw a sidewalk rectangle (green) for each exterior building edge, which give
 
 ![Incredible drawing](expl.resized.png)
 
+The algorithm uses mongodb's geospatial features, which is probably the wrong choice. Getting to know clojure was the main objective. 
+
 2) Create the map
 
 Import the sidewalk geojson as a source in Mapbox Studio, and style it with CartoCSS. The projects are in the `studio` dir. 

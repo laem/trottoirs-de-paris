@@ -12,7 +12,7 @@ This project is an attempt to provide the width of the parisian sidewalks. The t
 </p>
 
 This second map is an early draft providing a **map for pedestrians**, that includes sidewalks, squares and parks (and could show trees, water fountains...).
-Find the very large ones where you can skate freely or the very narrow ones which might be a problem for some people or during peak times.
+Find the very large ones where you can skate freely or the very narrow ones which might be a problem for some people or during peak times. Forget [this](pedestrian-cartoon-imbed.jpg) sensation. 
 
 [Map for pedestrians (fullscreen)](https://api.tiles.mapbox.com/v4/laem.ca825d58/page.html?access_token=pk.eyJ1IjoibGFlbSIsImEiOiJ1Qjh4a1JNIn0.BGQeLm-XAzTgLF9t25VSKw#17/48.85275/2.34626)
 
@@ -27,7 +27,17 @@ Source for figures : [bilan des déplacements à Paris](http://www.paris.fr/prat
 
 # How it works
 
-TODO
+1) Compute the sidewalk geojson shapes
+
+The city of Paris gives two datasets : building polygons (in red) and sidewalk lines (in blue). 
+We draw a sidewalk rectangle (green) for each exterior building edge, which gives us an estimation of the local width, as explained on this incredibly sophisticated drawing :
+
+![Incredible drawing](expl.resized.png)
+
+2) Create the map
+
+Import the sidewalk geojson as a source in Mapbox Studio, and style it with CartoCSS. The projects are in the `studio` dir. 
+
 
 # Computing sidewalk shapes
 

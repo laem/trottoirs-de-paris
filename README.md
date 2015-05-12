@@ -1,14 +1,23 @@
 # What ? 
 
-Maps are made for cars. Are they still relevant in Paris, where pedestrians ??
-This is what a street in Paris looks like on maps : 
+Cities are designed for cars.  We even use maps drawn for cars. 
+In cities like Paris, they are however a minor means of transportation : more than 25% of travel is made by public transport, and *more than 60% by walk*.
 
-[image]
+This project is an attempt to provide the width of the parisian sidewalks. The technique used to draw sidewalks does not produce beautiful nor complete shapes, but directly gives an estimation of their width, leading to this map of **sidewalks coloured by width**.
 
-The road isn't so tiny, nor does it span the whole street width. 
-What's missing here is the pavement width. 
+[Sidewalk widths](https://octodex.github.com/images/yaktocat.png)
+
+This second map is an early draft providing a **map for pedestrians**, that includes sidewalks, squares and parks (and could show trees, water fountains...).
+Find the very large ones where you can skate freely or the very narrow ones which might be a problem for some people or during peak times. 
+
+![map for pedestrians](paris-piéton-latin.png)
+
+
+Source for figures : [bilan des déplacements à Paris](http://www.paris.fr/pratique/deplacements-voirie/dossier/bilan-des-deplacements-a-paris/le-bilan-des-deplacements-a-paris-en-2013/rub_7096_dossier_103374_port_16333_sheet_25892)
 
 # How it works 
+
+TODO
 
 # Running this project 
 
@@ -40,8 +49,8 @@ mongoimport --db agreable --collection t --file d.ok.json --jsonArray
 ```
 
 
-We should repeat the operation for the 'Volumes Batis' (buildings) [file](http://parisdata.opendatasoft.com/explore/dataset/volumesbatisparis2011/download/?format=geojson&timezone=Europe/Berlin). **Unfortunately**, some of them can't be indexed by mongoDB (malformed geojson polygons).
-Download and import instead an export of the buildings filtered (~50 of them are missing).
+The operation should be repeated for the 'Volumes Batis' (buildings) [file](http://parisdata.opendatasoft.com/explore/dataset/volumesbatisparis2011/download/?format=geojson&timezone=Europe/Berlin). **Unfortunately**, some of them can't be indexed by mongoDB (malformed geojson polygons).
+Download and import an export of the buildings filtered instead (~50 of them are missing).
 
 ```
 curl https://copy.com/MaFNvfd7SoLTNEHn?download=1 > v-correct.tar.bz2
@@ -58,8 +67,22 @@ db.v.createIndex( { geometry : "2dsphere" } )
 db.t.createIndex( { geometry : "2dsphere" } )
 ```
 
+At this point, you can run the following commands, where `a` (l*a*titude), `o` (l*o*ngitude) and `r` (radius) define the bounding circle in sample runs. The algorithm is slow, a couple of minutes for a radius of 90 meters, hence the sample mode. 
 
-
+1) compute the sidewalk polygons in a sample circle, output to `trottoirs.geojson`
+```
+lein with-profile cl run -- -a 48.84630097640122 -o 2.378979921340942 -r 90
+```
+2) launch a web page that displays the resulting polygons on a map (and also overrides the above file).
+```
+lein ring server
+# checkout localhost:3000/#t/[a]/[o]/[r], example: 
+# http://localhost:3000/#t/48.84630097640122/2.378979921340942/10
+```
+3) Compute everything, *it will take multiple hours*
+```
+lein with-profile cl run --
+```
 
 
 [Archive] failed attempt with topojson :

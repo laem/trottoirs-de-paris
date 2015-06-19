@@ -1,0 +1,120 @@
+body {
+  font-family:'Fira Sans';
+  padding: 0;
+  margin: 0;
+}
+html, body, #map {
+  height: 100%;
+  width: 100%;
+}
+
+
+#chooser {
+  position: fixed;
+  top: 1%;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 2;
+}
+
+#choices {
+  background: rgba(255, 255, 255, 0.90);
+  padding: 6px 4px 2px 4px;
+  list-style-type: none;
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  font-size: 26px;
+}
+
+@media (max-width: 900px) {
+  #choices {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  #choices {
+    font-size: 7px;
+  }
+}
+
+
+
+
+
+#choices li {
+  display: inline;
+  list-style-type: none;
+  padding-right: 20px;
+  padding-left: 20px;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.45);
+}
+
+#choices li.active {
+  color: rgba(0, 0, 0, 0.85);
+}
+
+#choices li:hover {
+  color: #1ABC9C
+}
+
+#choices li:last-of-type {
+  border-left: 1px solid rgba(0, 0, 0, 0.1)
+}
+
+#explanation-text {
+  color: rgba(0, 0, 0, 0.85);
+  max-width: 80%;
+  position: relative;
+  left: 8%;
+  padding-left: 1%;
+  padding-right: 1%;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.80);
+  border-radius: 3px;
+}
+
+.explanations div {
+  display:none;
+}
+
+#legend {
+  font-size: 12px;
+  position: fixed;
+  bottom:6%;
+  left: 2%;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.80);
+  padding-left: 1%;
+  padding-right: 1%;
+  border-radius: 3px;
+}
+
+#what {
+  font-size: 24px;
+  position: fixed;
+  bottom:6%;
+  right: 1%;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.80);
+  padding: 5px 10px 2px 10px;
+  border-radius: 3px;
+}
+
+#what a {
+  text-decoration: none;
+}
+
+#legend ul {
+  list-style-type:none;
+}
+#legend li {
+  margin-left: -30px
+}
+
+span.legend-color {
+  padding: 0px 6px;
+  border-radius:30px;
+  margin-right: 15px
+}

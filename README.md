@@ -5,7 +5,7 @@ In cities like Paris, they are however a minor means of transportation : more th
 
 This project is an attempt to provide the width of the parisian sidewalks. The technique used to draw sidewalks does not produce beautiful nor complete shapes, but directly gives an estimation of their width, leading to this map of **sidewalks coloured by width**.
 
-[Sidewalk widths](http://laem.github.io/trottoirs-de-paris/)
+[See the maps](http://laem.github.io/trottoirs-de-paris/)
 
 
 <p align="center">

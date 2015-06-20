@@ -1,26 +1,31 @@
 # What ?
 
-Cities are designed for cars.  We even use maps drawn for cars.
+Cities are [designed](pedestrian-cartoon-imbed.jpg) for cars.  We even use maps drawn for cars.
 In cities like Paris, they are however a minor means of transportation : more than 25% of travel is made by public transport, and *more than 60% by walk*.
 
 This project is an attempt to provide the width of the parisian sidewalks. The technique used to draw sidewalks does not produce beautiful nor complete shapes, but directly gives an estimation of their width, leading to this map of **sidewalks coloured by width**.
 
-[Sidewalk widths (fullscreen)](https://api.tiles.mapbox.com/v4/trottoirs.9a57f77c/page.html?access_token=pk.eyJ1IjoidHJvdHRvaXJzIiwiYSI6IjFqTHpzN2sifQ.lKYhcpJGt4Xof8s98pDixQ#17/48.85546/2.34989)
+[Sidewalk widths](http://laem.github.io/trottoirs-de-paris/)
+
 
 <p align="center">
   <img alt="Sidewalk widths" src="trottoirs-paris.medium.png"/>
 </p>
 
 This second map is an early draft providing a **map for pedestrians**, that includes sidewalks, squares and parks (and could show trees, water fountains...).
-Find the very large ones where you can skate freely or the very narrow ones which might be a problem for some people or during peak times. Forget [this](pedestrian-cartoon-imbed.jpg) sensation. 
-
-[Map for pedestrians (fullscreen)](https://api.tiles.mapbox.com/v4/laem.ca825d58/page.html?access_token=pk.eyJ1IjoibGFlbSIsImEiOiJ1Qjh4a1JNIn0.BGQeLm-XAzTgLF9t25VSKw#17/48.85275/2.34626)
+Find the very large ones where you can skate freely or the very narrow ones which might be a problem for some people or during peak times.
 
 <p align="center">
   <img alt="Map for pedestrians" src="paris-piéton-latin.medium.png"/>
 </p>
 
-Source for figures : [bilan des déplacements à Paris](http://www.paris.fr/pratique/deplacements-voirie/dossier/bilan-des-deplacements-a-paris/le-bilan-des-deplacements-a-paris-en-2013/rub_7096_dossier_103374_port_16333_sheet_25892)
+### Direct link to map tiles
+[Sidewalk widths](https://api.tiles.mapbox.com/v4/trottoirs.9a57f77c/page.html?access_token=pk.eyJ1IjoidHJvdHRvaXJzIiwiYSI6IjFqTHpzN2sifQ.lKYhcpJGt4Xof8s98pDixQ#17/48.85546/2.34989)
+
+[Map for pedestrians](https://api.tiles.mapbox.com/v4/laem.ca825d58/page.html?access_token=pk.eyJ1IjoibGFlbSIsImEiOiJ1Qjh4a1JNIn0.BGQeLm-XAzTgLF9t25VSKw#17/48.85275/2.34626)
+
+### Source for figures : 
+[bilan des déplacements à Paris](http://www.paris.fr/pratique/deplacements-voirie/dossier/bilan-des-deplacements-a-paris/le-bilan-des-deplacements-a-paris-en-2013/rub_7096_dossier_103374_port_16333_sheet_25892)
 
 
 

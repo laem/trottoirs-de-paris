@@ -1,6 +1,7 @@
 (ns trottoirs.engine
  (:require  [monger.core :as mg]
             [clojure.data.json :as json]
+	    [clojure.core.reducers :as r]
             [monger.collection :as mc]
             [monger.operators :refer :all]
             [monger.conversion :refer [from-db-object]]
@@ -10,7 +11,8 @@
 
 
 ;;; DB ;;;;;;;;;;;
-(def db (mg/get-db (mg/connect) "agreable"))
+(def connection (mg/connect))
+(def db (mg/get-db connection "agreable"))
 (defn objectId-reader [key value]
   (if (= key :_id)
     (str value)
@@ -88,7 +90,7 @@
                             :distanceField "calculated_distance"
                             :query { :geometry { "$geoIntersects" { "$geometry" (:geometry (geo-feature "LineString" perp nil)) } }}
                             }}]))
-         [v-results t-results] (map q ["v" "t"]) ;; buildings (v) and trottoirs (t) collections
+         [v-results t-results] (map q ["v" "t"]) ;; buildings (v) and trottoi\s (t) collections
          ;;yop (do (println (str id ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")) (println v-results))
          ;; a polygon segment can intersect the polygon itself (because of decimal shifts probably), remove this result
          buildings (remove (fn [v] (and (= (:_id v) id) (< (:calculated_distance v) 0.5 ))) v-results)
@@ -167,7 +169,10 @@
     (let [out (str "{ \"type\": \"FeatureCollection\",\"features\": "
          (json/write-str (map #(geo-feature "Polygon" (:coordinates %) (:properties %)) hits) :value-fn objectId-reader)
          "}")]
-      (do (spit "./trottoirs.geojson" out) (println "Outpout written in ./trottoirs.geojson"))
+      (do (spit "./trottoirs.geojson" out) (println "Outpout written in ./trottoirs.geojson")
+	(mg/disconnect connection)
+	    (shutdown-agents)
+	)
       out
       )
 

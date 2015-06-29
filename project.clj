@@ -35,6 +35,7 @@
          :uberwar-name "trottoirs.war"}
 
   :min-lein-version "2.5.0"
+  :jvm-opts ["-Xmx10g"]
 
   :uberjar-name "trottoirs.jar"
 

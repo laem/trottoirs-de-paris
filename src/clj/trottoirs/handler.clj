@@ -6,7 +6,7 @@
             [selmer.parser :refer [render-file]]
             [prone.middleware :refer [wrap-exceptions]]
             [environ.core :refer [env]]
-            [trottoirs.engine :refer [draw-perps]]
+            [trottoirs.engine :refer [draw-perps get-features]]
             )
   )
 
@@ -15,6 +15,7 @@
 (defroutes routes
   (GET "/" [] (render-file "templates/index.html" {:dev (env :dev?)}))
   (GET "/sample/:lat/:lng/:rad" [lat lng rad] (draw-perps lat lng rad)) ;;
+  (GET "/features/:lat/:lng/:rad" [lat lng rad] (draw-perps lat lng rad))
   (resources "/")
   (not-found "Not Found"))
 

@@ -4,7 +4,7 @@
             [monger.collection :as mc]
             [monger.operators :refer :all]
             [monger.conversion :refer [from-db-object]]
-            [trottoirs.mercator :refer [mercator inverted-mercator segment-length to-mercator-distance]] 
+            [trottoirs.mercator :refer [mercator inverted-mercator segment-length to-mercator-distance]]
 
    ))
 
@@ -72,7 +72,6 @@
         :when (= (count els) 1)]
    (first els)))
 
-
 ;; perform a mongodb aggregation of $geoNear (just to get the document distances, increasing) and $geoIntersects
 ;; on the two collections
 ;; take the closest result of two requests, since shapes were separated in two collections
@@ -95,39 +94,46 @@
          buildings (remove (fn [v] (and (= (:_id v) id) (< (:calculated_distance v) 0.5 ))) v-results)
          buildings v-results
          ;; ignore all types of trottoirs expect BORdures
-         bordures (filter (fn [t] (= "BOR" (get-in t [:properties :info]))) t-results)] 
+         bordures (filter (fn [t] (= "BOR" (get-in t [:properties :info]))) t-results)]
     (apply min-key
            #(if (nil? %) 10000 ;; this because I don't know how to code
              (:calculated_distance %))
            (map first [buildings bordures]))
     ))
 
+(defn pmapcat [f batches]
+  (->> batches
+       (pmap f)
+       (apply concat)
+       doall))
+
+
 
 ;;; Main function ;;;;;;;;;;;
-(defn draw-perps 
+(defn draw-perps
   ( [] (draw-perps nil nil nil)) ; that's ugly yeah
   ( [lat lng rad]
   (let [;; trottoirs will be computed around this central point with a given diameter
-        nearQuery (if (every? some? [lat lng rad]) 
-                    { :geometry 
+        nearQuery (if (every? some? [lat lng rad])
+                    { :geometry
                       { $near
                              { "$geometry" {
                                 :type "Point"
                                 ;; Grands boulevards
-                                ;;:coordinates [2.3449641466140747 48.87105583726818] 
+                                ;;:coordinates [2.3449641466140747 48.87105583726818]
                                 ;; Diderot
-                                ;;:coordinates [2.378979921340942 48.84630097640122] 
+                                ;;:coordinates [2.378979921340942 48.84630097640122]
                                 ;; Adele
                                 :coordinates [(read-string lng) (read-string lat)]}
                                "$maxDistance" (read-string rad) ;; diameter
-                               } } } 
+                               } } }
                     nil)
         ;; perform the query, will return building shapes
         results (mc/find-maps db "v" nearQuery)
         ;; get their coordinates
-        polygons (map (fn [{id :_id {coordinates :coordinates} :geometry}] {:coords coordinates :id id}) results)
+        polygons (pmap (fn [{id :_id {coordinates :coordinates} :geometry}] {:coords coordinates :id id}) results)
         ;; collect all the polygon segments
-        all-segments (mapcat
+        all-segments (pmapcat
                        (fn [{:keys [id coords]}]
                          (mapcat
                            (fn [ring]
@@ -139,9 +145,9 @@
         ;; remove short segments, they usually are corners of buildings. This is a problem with round or complex structures TODO
         filtered-segments (filter (fn [seg] (> (segment-length (:coords seg)) 5)) lonely-segments)
         ;; compute [origin-segment corresponding-perpendicular-segment]
-        perps (map (fn [seg] [seg (compute-perp (:coords seg) 20)]) filtered-segments)
+        perps (pmap (fn [seg] [seg (compute-perp (:coords seg) 20)]) filtered-segments)
         ;; check whether this perpendicular's first intersection is a bordure trottoir
-        hits (mapcat (fn [[seg perp]]
+        hits (pmapcat (fn [[seg perp]]
                        (let [closest (closest-shape perp (:_id seg) 60)
                              valid (= "BOR" (get-in closest [:properties :info]))]
                          (if valid
@@ -167,3 +173,44 @@
 
     )))
 
+
+
+
+(defn remove-trottoirs-offset [trottoirs]
+ (map (fn [feature]
+                           (let [coords (get-in feature [:geometry :coordinates])
+                                 transform-coords (fn [[lo la]] [(- lo 0.000724) (- la 0.0000685)])
+                                 new-coords (if (nil? (get-in coords [0 0 0]))
+                                                 (map transform-coords coords)
+                                                 (map #(map transform-coords %) coords))]
+                                 (assoc-in feature [:geometry :coordinates] new-coords)))
+                         trottoirs))
+
+
+
+(defn get-features [lat lng rad]
+  (let [;; trottoirs will be computed around this central point with a given diameter
+        nearQuery (if (every? some? [lat lng rad])
+                    { :geometry
+                      { $near
+                             { "$geometry" {
+                                :type "Point"
+                                ;; Grands boulevards
+                                ;;:coordinates [2.3449641466140747 48.87105583726818]
+                                ;; Diderot
+                                ;;:coordinates [2.378979921340942 48.84630097640122]
+                                ;; Adele
+                                :coordinates [(read-string lng) (read-string lat)]}
+                               "$maxDistance" (read-string rad) ;; diameter
+                               } } }
+                    nil)
+        ;; perform the query, will return building shapes
+        trottoirs (mc/find-maps db "t" nearQuery)
+        ;; trottoirs have an incorret offset. This code helps finding the offset,
+        ;; by tweaking it and looking at the result on a map..
+        shifted-trottoirs  trottoirs;;(remove-trottoirs-offset trottoirs)
+        results (concat shifted-trottoirs (mc/find-maps db "v" nearQuery))]
+        (str
+          "{ \"type\": \"FeatureCollection\",\"features\": "
+          (json/write-str results :value-fn objectId-reader)
+          "}")))

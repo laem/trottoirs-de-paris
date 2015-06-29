@@ -21,14 +21,18 @@
         r (t/reader :json)
         getHandler (fn [response] (.addTo (.geoJson js/L
                                                     (clj->js (t/read r response))
-                                                    (clj->js {:style {:fillOpacity .25 :color "green" :weight 0}}))
+                                                    (clj->js {:style {:fillOpacity .25
+                                                                      :color "green"
+                                                                      :weight 0
+                                                                      :stroke-width "2px"
+                                                                      :stroke "red"}}))
                                           map))]
     (do
       (identity (.addTo (.tileLayer js/L (str "http://{s}.tiles.mapbox.com/v4/laem.lihjhd1m/{z}/{x}/{y}.png?access_token=" token)
                         (clj->js {:attribution "Thks, mapbox"
                                   :maxZoom 19}))
             map))
-      (GET (str "/sample/" lat "/" lng "/" radius ) {:handler getHandler}))))
+      (GET (str "/features/" lat "/" lng "/" radius ) {:handler getHandler}))))
 
 
 (defn home-render []

@@ -7,7 +7,7 @@ This project is an attempt to provide the width of the parisian sidewalks. The t
 
 [See the maps](http://laem.github.io/trottoirs-de-paris/)
 
-(*warning* : there seems to be  a horizontal offset that may alter the widths...)
+(there is a global offset on the source data)
 
 <p align="center">
   <img alt="Sidewalk widths" src="trottoirs-paris.medium.png"/>

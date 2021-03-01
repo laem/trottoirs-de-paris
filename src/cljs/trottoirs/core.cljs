@@ -28,7 +28,7 @@
                                                                       :stroke "red"}}))
                                           map))]
     (do
-      (identity (.addTo (.tileLayer js/L (str "http://{s}.tiles.mapbox.com/v4/laem.lihjhd1m/{z}/{x}/{y}.png?access_token=" token)
+      (identity (.addTo (.tileLayer js/L (str "https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/{z}/{x}/{y}?access_token=" token)
                         (clj->js {:attribution "Thks, mapbox"
                                   :maxZoom 19}))
             map))

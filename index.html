@@ -52,9 +52,9 @@
       var map;
       function displayMap(id){
         if (map != null) map.remove()
-        id = id || 'trottoirs.9a57f77c'
-        map = L.mapbox.map('map', id)
-            .setView([48.85546, 2.34989], 15);
+        map = L.mapbox.map('map')
+            .setView([48.85546, 2.34989], 15)
+            .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/light-v10'));
       }
 
       displayMap()

@@ -22,7 +22,7 @@
             colorés en fonction de leur largeur
           </p>
         </div>
-        <div data-mapId="laem.ca825d58">
+        <div data-mapId="mapbox://styles/kont/cklqxm3vz032x17nwtb12vkq2">
           <p>
             Visualiser les trottoirs, les zones <br/>
             piétonnes et les espaces verts
@@ -30,7 +30,7 @@
         </div>
       </div>
     </div>
-    <div id="legend" data-mapId="trottoirs.9a57f77c">
+    <div id="legend" data-mapId="mapbox://styles/kont/cklqxm3vz032x17nwtb12vkq2">
       <p>
         Largeur des trottoirs :
       </p>
@@ -52,9 +52,10 @@
       var map;
       function displayMap(id){
         if (map != null) map.remove()
+        id = id || 'mapbox://styles/kont/cklqxm3vz032x17nwtb12vkq2'
         map = L.mapbox.map('map')
             .setView([48.85546, 2.34989], 15)
-            .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/light-v10'));
+            .addLayer(L.mapbox.styleLayer(id));
       }
 
       displayMap()
